@@ -21,13 +21,13 @@ td {
 	visibility:hidden;
 }
 #playField {
+	cursor:url(_crosshair2.gif),url(myBall.cur),auto;
 	position:absolute;
 	bottom: 15px;
 	right: 15px;
 }
 
 #oppField {
-	cursor:url(crosshair.gif),url(myBall.cur),auto;
 	position:absolute;
 	top: 15px;
 	left: 15px;
