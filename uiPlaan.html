@@ -26,7 +26,7 @@ ctx.fillRect(0,0,150,150);
 				</a>
 				<a href="javascript:showPlayField()">
 					<div class="button">
-						Playahh!
+						Playfield(test)
 					</div>
 				</a>
 				<a href="javascript:exitGame()" id="lobbyButton">
@@ -47,7 +47,12 @@ ctx.fillRect(0,0,150,150);
 			</div>
 			<div id="content">
 				<div id="chatBox">
-					Chatbox
+					<div id="formContainer">
+						<form action="">
+							<input type="text" name="text">
+							<input type='submit' name='Submit' value='Submit' />
+						</form>
+					</div>
 				</div>
 				<canvas id="gameField" width="875" height="500">
 					Your browser does not support the canvas element.
@@ -56,7 +61,7 @@ ctx.fillRect(0,0,150,150);
 					draw(document.getElementById("gameField"));
 				</script>
 				<div id="help">
-					<div id="helpText">
+					<div class="popupText">
 						Mängus osaleb kaks mängijat.
 						Mängijad liituvad mängu läbi nn. lobby, kus on näha kõiki käimasolevaid mänge, võimalus uut mängu luua või liituda mõne olemasoleva mänguga, kus osalemas täpselt üks mängija.
 						Mängu eesmärgiks on võita vastasmängijat, uputades pommitamisega kõik vastasmängija laevad.
@@ -123,7 +128,7 @@ ctx.fillRect(0,0,150,150);
 						Peab eksisteerima võimalus kinnitada oma laevastiku lõplik paigutus mänguväljakul mängu alustamiseks
 						Mäng algab hetkel kui mõlemad mängijad on oma laevastiku väljakule pai
 					</div>
-					<div id="closeButton">
+					<div class="closeButtonContainer">
 						<a href="javascript:toggleHelp()">
 							<div class="button">
 								Close
@@ -132,7 +137,37 @@ ctx.fillRect(0,0,150,150);
 					</div>
 				</div>
 				<div id="rankings">
-					RANKINGS
+					<div class="popupText">
+						<table>
+							<tr>
+								<th>Name</th><th>Played Games</th><th>Win %</th><th>Rating</th>
+							</tr>
+							<tr><td>Mina Siin</td><td>50</td><td>48%</td><td>500</td></tr>
+							<tr><td>Mina Siin</td><td>50</td><td>48%</td><td>500</td></tr>
+							<tr><td>Mina Siin</td><td>50</td><td>48%</td><td>500</td></tr>
+							<tr><td>Mina Siin</td><td>50</td><td>48%</td><td>500</td></tr>
+							<tr><td>Mina Siin</td><td>50</td><td>48%</td><td>500</td></tr>
+							<tr><td>Mina Siin</td><td>50</td><td>48%</td><td>500</td></tr>
+							<tr><td>Mina Siin</td><td>50</td><td>48%</td><td>500</td></tr>
+							<tr><td>Mina Siin</td><td>50</td><td>48%</td><td>500</td></tr>
+							<tr><td>Mina Siin</td><td>50</td><td>48%</td><td>500</td></tr>
+							
+							<tr><td>Mina Siin</td><td>50</td><td>48%</td><td>500</td></tr>
+							<tr><td>Mina Siin</td><td>50</td><td>48%</td><td>500</td></tr>
+							<tr><td>Mina Siin</td><td>50</td><td>48%</td><td>500</td></tr>
+							<tr><td>Mina Siin</td><td>50</td><td>48%</td><td>500</td></tr>
+							<tr><td>Mina Siin</td><td>50</td><td>48%</td><td>500</td></tr>
+							<tr><td>Mina Siin</td><td>50</td><td>48%</td><td>500</td></tr>
+							
+						</table>
+					</div>
+					<div class="closeButtonContainer">
+						<a href="javascript:toggleRankings()">
+							<div class="button">
+								Close
+							</div>
+						</a>
+					</div>
 				</div>
 				<div id="lobby">
 					<div id="users">
@@ -166,23 +201,39 @@ ctx.fillRect(0,0,150,150);
 						User 1 <br />
 					</div>
 					<div id="games">
-						Games
+						<table>
+							<tr>
+								<th>Game Name</th><th>Game Owner</th><th>Join</th>
+							</tr>
+							<tr><td>Mina Siin mäng 1</td><td>Mina Siin</td><td>Join</td></tr>
+							<tr><td>Mina Siin mäng 2</td><td>Mina Siin</td><td>Join</td></tr>
+							<tr><td>Mina Siin mäng 3</td><td>Mina Siin</td><td>Join</td></tr>
+							<tr><td>Mina Siin mäng 4</td><td>Mina Siin</td><td>Join</td></tr>
+							<tr><td>Mina Siin mäng 5</td><td>Mina Siin</td><td>Join</td></tr>
+							<tr><td>Mina Siin mäng 6</td><td>Mina Siin</td><td>Join</td></tr>
+							<tr><td>Mina Siin mäng 7</td><td>Mina Siin</td><td>Join</td></tr>
+							<tr><td>Mina Siin mäng 8</td><td>Mina Siin</td><td>Join</td></tr>
+							<tr><td>Mina Siin mäng 8</td><td>Mina Siin</td><td>Join</td></tr>
+							<tr><td>Mina Siin mäng 8</td><td>Mina Siin</td><td>Join</td></tr>
+							<tr><td>Mina Siin mäng 8</td><td>Mina Siin</td><td>Join</td></tr>
+							<tr><td>Mina Siin mäng 8</td><td>Mina Siin</td><td>Join</td></tr>
+							<tr><td>Mina Siin mäng 8</td><td>Mina Siin</td><td>Join</td></tr>
+							<tr><td>Mina Siin mäng 8</td><td>Mina Siin</td><td>Join</td></tr>
+							<tr><td>Mina Siin mäng 8</td><td>Mina Siin</td><td>Join</td></tr>
+							<tr><td>Mina Siin mäng 8</td><td>Mina Siin</td><td>Join</td></tr>
+							<tr><td>Mina Siin mäng 8</td><td>Mina Siin</td><td>Join</td></tr>
+							<tr><td>Mina Siin mäng 8</td><td>Mina Siin</td><td>Join</td></tr>
+							<tr><td>Mina Siin mäng 8</td><td>Mina Siin</td><td>Join</td></tr>
+							<tr><td>Mina Siin mäng 8</td><td>Mina Siin</td><td>Join</td></tr>
+							<tr><td>Mina Siin mäng 8</td><td>Mina Siin</td><td>Join</td></tr>
+							<tr><td>Mina Siin mäng 8</td><td>Mina Siin</td><td>Join</td></tr>
+							<tr><td>Mina Siin mäng 8</td><td>Mina Siin</td><td>Join</td></tr>
+							
+						</table>
 					</div>
 					<div id="lobbyButtons">
 						<a href="">
-							<div class="button">
-								Stuuuff
-							</div>
-						</a>
-						<a href="javascript:showPlayField()">
-							<div class="button">
-								Moor stuff
-							</div>
-						</a>
-						<a href="javascript:showPlayField()">
-							<div class="button">
-								Do stufff
-							</div>
+							<div class="button">New Game</div>
 						</a>
 					</div>
 				</div>
