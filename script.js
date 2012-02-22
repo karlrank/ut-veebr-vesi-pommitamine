@@ -17,6 +17,7 @@ function showPlayField() {
 	$("#playField").show();
 	$("#oppField").show();
 	$("#chatBox").show();
+	$("#shipBox").show();
 }
 
 function clean() {
@@ -26,6 +27,7 @@ function clean() {
 	$("#help").hide();
 	$("#rankings").hide();
 	$("#lobby").hide();
+	$("#shipBox").hide();
 }
 
 function exitGame() {

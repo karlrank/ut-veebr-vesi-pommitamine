@@ -27,6 +27,19 @@ td {
 	right: 15px;
 }
 
+#shipBox {
+	padding: 15px;
+	display: none;
+	border:1px solid black;
+	background-color: #DDDDDD;
+	height: 190px;
+	width: 160px;
+	position:absolute;
+	bottom: 240px;
+	left: 295px;
+	z-index: 100;
+}
+
 #playField {
 	display: none;
 	position:absolute;
