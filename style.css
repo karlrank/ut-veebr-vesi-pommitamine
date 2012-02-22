@@ -44,6 +44,46 @@ body {
 	display: none;	
 }
 
+#users {
+	position: absolute;
+	border:1px solid black;
+	right: 15px;
+	top: 15px;
+	height: 438px;
+	width: 160px;
+	z-index: 3;
+	background-color: #CCCCCC;
+	overflow: auto;
+}
+
+#games {
+	position: absolute;
+	border:1px solid black;
+	left: 15px;
+	top: 15px;
+	height: 350px;
+	width: 650px;
+	z-index: 3;
+	background-color: #CCCCCC;
+	overflow: auto;
+}
+
+#lobbyButtons {
+	position: absolute;
+	border:1px solid black;
+	left: 15px;
+	bottom: 15px;
+	height: 75px;
+	width: 650px;
+	z-index: 3;
+	background-color: #CCCCCC;
+	overflow: auto;
+}
+
+#lobbyButtons .button {
+	 float:right;
+}
+
 #help {
 	overflow: auto;
 	background-color: #CCCCCC;
