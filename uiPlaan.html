@@ -56,38 +56,80 @@ ctx.fillRect(0,0,150,150);
 					draw(document.getElementById("gameField"));
 				</script>
 				<div id="help">
-					Mängus osaleb kaks mängijat.
-					Mängijad liituvad mängu läbi nn. lobby, kus on näha kõiki käimasolevaid mänge, võimalus uut mängu luua või liituda mõne olemasoleva mänguga, kus osalemas täpselt üks mängija.
-					Mängu eesmärgiks on võita vastasmängijat, uputades pommitamisega kõik vastasmängija laevad.
-					Kummalgi mängijal on oma 10x10 mänguväli.
-					Enne mängu alustamist paigutab kumbki mängija oma mänguväljale oma laevastiku, kuhu kuuluvad:
-					Üks nelja ruudu pikkune laev
-					Kaks kolme ruudu pikkust laeva
-					Kolm kahe ruudu pikkust laeva
-					Neli ühe ruudu pikkust laeva
-					Vastasmängija mänguväli on mängijale nähtav, sellele paigutatud laevastik enne mängu alustamist aga mitte.
-					Laevade paigutamine mänguväljakule toimub hiirekursori abil
-					Mänguväljakule paigutatud laevad ei tohi omavahel ei küljetsi ega nurgiti kokku puutuda
-					Kõik laevad on sirge kujuga, "tetrise" kujulisi laevu mängus ei eksisteeri
-					Juba asetatud laevu peab saama mänguväljakul ringi paigutada, seni kuni mängija ei ole valikut lõplikult kinnitanud
-					Peab eksisteerima võimalus kinnitada oma laevastiku lõplik paigutus mänguväljakul mängu alustamiseks
-					Mäng algab hetkel kui mõlemad mängijad on oma laevastiku väljakule pai
-					Mängus osaleb kaks mängijat.
-					Mängijad liituvad mängu läbi nn. lobby, kus on näha kõiki käimasolevaid mänge, võimalus uut mängu luua või liituda mõne olemasoleva mänguga, kus osalemas täpselt üks mängija.
-					Mängu eesmärgiks on võita vastasmängijat, uputades pommitamisega kõik vastasmängija laevad.
-					Kummalgi mängijal on oma 10x10 mänguväli.
-					Enne mängu alustamist paigutab kumbki mängija oma mänguväljale oma laevastiku, kuhu kuuluvad:
-					Üks nelja ruudu pikkune laev
-					Kaks kolme ruudu pikkust laeva
-					Kolm kahe ruudu pikkust laeva
-					Neli ühe ruudu pikkust laeva
-					Vastasmängija mänguväli on mängijale nähtav, sellele paigutatud laevastik enne mängu alustamist aga mitte.
-					Laevade paigutamine mänguväljakule toimub hiirekursori abil
-					Mänguväljakule paigutatud laevad ei tohi omavahel ei küljetsi ega nurgiti kokku puutuda
-					Kõik laevad on sirge kujuga, "tetrise" kujulisi laevu mängus ei eksisteeri
-					Juba asetatud laevu peab saama mänguväljakul ringi paigutada, seni kuni mängija ei ole valikut lõplikult kinnitanud
-					Peab eksisteerima võimalus kinnitada oma laevastiku lõplik paigutus mänguväljakul mängu alustamiseks
-					Mäng algab hetkel kui mõlemad mängijad on oma laevastiku väljakule pai
+					<div id="helpText">
+						Mängus osaleb kaks mängijat.
+						Mängijad liituvad mängu läbi nn. lobby, kus on näha kõiki käimasolevaid mänge, võimalus uut mängu luua või liituda mõne olemasoleva mänguga, kus osalemas täpselt üks mängija.
+						Mängu eesmärgiks on võita vastasmängijat, uputades pommitamisega kõik vastasmängija laevad.
+						Kummalgi mängijal on oma 10x10 mänguväli.
+						Enne mängu alustamist paigutab kumbki mängija oma mänguväljale oma laevastiku, kuhu kuuluvad:
+						Üks nelja ruudu pikkune laev
+						Kaks kolme ruudu pikkust laeva
+						Kolm kahe ruudu pikkust laeva
+						Neli ühe ruudu pikkust laeva
+						Vastasmängija mänguväli on mängijale nähtav, sellele paigutatud laevastik enne mängu alustamist aga mitte.
+						Laevade paigutamine mänguväljakule toimub hiirekursori abil
+						Mänguväljakule paigutatud laevad ei tohi omavahel ei küljetsi ega nurgiti kokku puutuda
+						Kõik laevad on sirge kujuga, "tetrise" kujulisi laevu mängus ei eksisteeri
+						Juba asetatud laevu peab saama mänguväljakul ringi paigutada, seni kuni mängija ei ole valikut lõplikult kinnitanud
+						Peab eksisteerima võimalus kinnitada oma laevastiku lõplik paigutus mänguväljakul mängu alustamiseks
+						Mäng algab hetkel kui mõlemad mängijad on oma laevastiku väljakule pai
+						Mängus osaleb kaks mängijat.
+						Mängijad liituvad mängu läbi nn. lobby, kus on näha kõiki käimasolevaid mänge, võimalus uut mängu luua või liituda mõne olemasoleva mänguga, kus osalemas täpselt üks mängija.
+						Mängu eesmärgiks on võita vastasmängijat, uputades pommitamisega kõik vastasmängija laevad.
+						Kummalgi mängijal on oma 10x10 mänguväli.
+						Enne mängu alustamist paigutab kumbki mängija oma mänguväljale oma laevastiku, kuhu kuuluvad:
+						Üks nelja ruudu pikkune laev
+						Kaks kolme ruudu pikkust laeva
+						Kolm kahe ruudu pikkust laeva
+						Neli ühe ruudu pikkust laeva
+						Vastasmängija mänguväli on mängijale nähtav, sellele paigutatud laevastik enne mängu alustamist aga mitte.
+						Laevade paigutamine mänguväljakule toimub hiirekursori abil
+						Mänguväljakule paigutatud laevad ei tohi omavahel ei küljetsi ega nurgiti kokku puutuda
+						Kõik laevad on sirge kujuga, "tetrise" kujulisi laevu mängus ei eksisteeri
+						Juba asetatud laevu peab saama mänguväljakul ringi paigutada, seni kuni mängija ei ole valikut lõplikult kinnitanud
+						Peab eksisteerima võimalus kinnitada oma laevastiku lõplik paigutus mänguväljakul mängu alustamiseks
+						Mäng algab hetkel kui mõlemad mängijad on oma laevastiku väljakule pai
+						
+						Mängus osaleb kaks mängijat.
+						Mängijad liituvad mängu läbi nn. lobby, kus on näha kõiki käimasolevaid mänge, võimalus uut mängu luua või liituda mõne olemasoleva mänguga, kus osalemas täpselt üks mängija.
+						Mängu eesmärgiks on võita vastasmängijat, uputades pommitamisega kõik vastasmängija laevad.
+						Kummalgi mängijal on oma 10x10 mänguväli.
+						Enne mängu alustamist paigutab kumbki mängija oma mänguväljale oma laevastiku, kuhu kuuluvad:
+						Üks nelja ruudu pikkune laev
+						Kaks kolme ruudu pikkust laeva
+						Kolm kahe ruudu pikkust laeva
+						Neli ühe ruudu pikkust laeva
+						Vastasmängija mänguväli on mängijale nähtav, sellele paigutatud laevastik enne mängu alustamist aga mitte.
+						Laevade paigutamine mänguväljakule toimub hiirekursori abil
+						Mänguväljakule paigutatud laevad ei tohi omavahel ei küljetsi ega nurgiti kokku puutuda
+						Kõik laevad on sirge kujuga, "tetrise" kujulisi laevu mängus ei eksisteeri
+						Juba asetatud laevu peab saama mänguväljakul ringi paigutada, seni kuni mängija ei ole valikut lõplikult kinnitanud
+						Peab eksisteerima võimalus kinnitada oma laevastiku lõplik paigutus mänguväljakul mängu alustamiseks
+						Mäng algab hetkel kui mõlemad mängijad on oma laevastiku väljakule pai
+						Mängus osaleb kaks mängijat.
+						Mängijad liituvad mängu läbi nn. lobby, kus on näha kõiki käimasolevaid mänge, võimalus uut mängu luua või liituda mõne olemasoleva mänguga, kus osalemas täpselt üks mängija.
+						Mängu eesmärgiks on võita vastasmängijat, uputades pommitamisega kõik vastasmängija laevad.
+						Kummalgi mängijal on oma 10x10 mänguväli.
+						Enne mängu alustamist paigutab kumbki mängija oma mänguväljale oma laevastiku, kuhu kuuluvad:
+						Üks nelja ruudu pikkune laev
+						Kaks kolme ruudu pikkust laeva
+						Kolm kahe ruudu pikkust laeva
+						Neli ühe ruudu pikkust laeva
+						Vastasmängija mänguväli on mängijale nähtav, sellele paigutatud laevastik enne mängu alustamist aga mitte.
+						Laevade paigutamine mänguväljakule toimub hiirekursori abil
+						Mänguväljakule paigutatud laevad ei tohi omavahel ei küljetsi ega nurgiti kokku puutuda
+						Kõik laevad on sirge kujuga, "tetrise" kujulisi laevu mängus ei eksisteeri
+						Juba asetatud laevu peab saama mänguväljakul ringi paigutada, seni kuni mängija ei ole valikut lõplikult kinnitanud
+						Peab eksisteerima võimalus kinnitada oma laevastiku lõplik paigutus mänguväljakul mängu alustamiseks
+						Mäng algab hetkel kui mõlemad mängijad on oma laevastiku väljakule pai
+					</div>
+					<div id="closeButton">
+						<a href="javascript:toggleHelp()">
+							<div class="button">
+								Close
+							</div>
+						</a>
+					</div>
 				</div>
 				<div id="rankings">
 					RANKINGS

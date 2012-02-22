@@ -1,6 +1,6 @@
 body {
 	font-family:Verdana;
-
+	
 	}
 
 #gameField {
@@ -20,6 +20,7 @@ body {
 	margin-left:-550px;
 	margin-top:-250px;
 	padding: 15px;
+	background-image: url('img/camo.png');
 }
 
 #menu {
@@ -98,6 +99,17 @@ body {
 	z-index:4;
 	padding: 15px;
 	display: none;
+}
+
+#closeButton {
+	border: 1px solid black;
+	height: 35px;
+	bottom: 100px;
+}
+
+#closeButton .button {
+	margin-left: auto;
+	margin-right: auto;
 }
 
 #rankings {
