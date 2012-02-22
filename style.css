@@ -32,6 +32,18 @@ body {
 	padding: 15px;
 }
 
+#chatBox {
+	position: absolute;
+	border:1px solid black;
+	left: 45px;
+	bottom: 15px;
+	height: 200px;
+	width: 400px;
+	z-index: 4;
+	background-color: #CCCCCC;
+	display: none;	
+}
+
 #help {
 	overflow: auto;
 	background-color: #CCCCCC;

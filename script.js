@@ -16,6 +16,7 @@ function showPlayField() {
 	$("#rankings").hide();
 	$("#lobby").hide();
 	$("#gameField").show();
+	$("#chatBox").show();
 }
 
 function clean() {
@@ -23,16 +24,19 @@ function clean() {
 	$("#rankings").hide();
 	$("#lobby").hide();
 	$("#gameField").hide();
+	$("chatBox").hide();
 }
 
 function exitGame() {
 	clean();
 	$("#lobby").show();
 	$("#lobbyButton").hide();
+	$("#chatBox").hide();
 }
 
 //joonistamine
 function draw(canvas) {	
+	//Load (and draw) playfield images
 	var ctx=canvas.getContext("2d");
 	var img=new Image();
 	img.onload = function(){
@@ -45,10 +49,54 @@ function draw(canvas) {
 	ctx.drawImage(img_own,0,0);
 	};
 	img_own.src="img/own_field.png"
-		
-	var img2=new Image();
-	img2.onload = function(){
-	ctx.drawImage(img2,35,35);
-	};
-	img2.src="img/4sqship.png"
+	
+	//Load (and draw) Ship images
+	var shipImg=new Array();
+	for (i=0;i<=9;i++) {
+		shipImg[i]=new Image();		
+	}
+	
+	shipImg[0].onload = function(){
+		ctx.drawImage(shipImg[0],300,(15 + 25*0));
+		};
+	shipImg[1].onload = function(){
+		ctx.drawImage(shipImg[1],300,(15 + 25*1));
+		};
+	shipImg[2].onload = function(){
+		ctx.drawImage(shipImg[2],300,(15 + 25*2));
+		};
+	shipImg[3].onload = function(){
+		ctx.drawImage(shipImg[3],300,(15 + 25*3));
+		};
+	shipImg[4].onload = function(){
+		ctx.drawImage(shipImg[4],300,(15 + 25*4));
+		};
+	shipImg[5].onload = function(){
+		ctx.drawImage(shipImg[5],300,(15 + 25*5));
+		};
+	shipImg[6].onload = function(){
+		ctx.drawImage(shipImg[6],365,(15 + 25*2));
+		};
+	shipImg[7].onload = function(){
+		ctx.drawImage(shipImg[7],365,(15 + 25*3));
+		};
+	shipImg[8].onload = function(){
+		ctx.drawImage(shipImg[8],365,(15 + 25*4));
+		};
+	shipImg[9].onload = function(){
+		ctx.drawImage(shipImg[9],365,(15 + 25*5));
+		};
+	
+	shipImg[0].src="img/4sqship.png"
+	shipImg[1].src="img/3sqship.png"
+	shipImg[2].src="img/3sqship.png"
+	
+	for (i=3;i<=5;i++) {
+		shipImg[i].src="img/2sqship.png"
+	}
+	
+	for (i=6;i<=9;i++) {
+		shipImg[i].src="img/1sqship.png"
+	}
+	
 }
