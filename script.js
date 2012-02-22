@@ -17,7 +17,7 @@ function showPlayField() {
 	$("#playField").show();
 	$("#oppField").show();
 	$("#chatBox").show();
-	$("#shipBox").show();
+	$("#shipBox").show(); 
 }
 
 function clean() {
