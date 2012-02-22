@@ -57,34 +57,34 @@ function draw(canvas) {
 	}
 	
 	shipImg[0].onload = function(){
-		ctx.drawImage(shipImg[0],300,(15 + 25*0));
+		ctx.drawImage(shipImg[0],300,(40 + 25*0));
 		};
 	shipImg[1].onload = function(){
-		ctx.drawImage(shipImg[1],300,(15 + 25*1));
+		ctx.drawImage(shipImg[1],300,(40 + 25*1));
 		};
 	shipImg[2].onload = function(){
-		ctx.drawImage(shipImg[2],300,(15 + 25*2));
+		ctx.drawImage(shipImg[2],300,(40 + 25*2));
 		};
 	shipImg[3].onload = function(){
-		ctx.drawImage(shipImg[3],300,(15 + 25*3));
+		ctx.drawImage(shipImg[3],300,(40 + 25*3));
 		};
 	shipImg[4].onload = function(){
-		ctx.drawImage(shipImg[4],300,(15 + 25*4));
+		ctx.drawImage(shipImg[4],300,(40 + 25*4));
 		};
 	shipImg[5].onload = function(){
-		ctx.drawImage(shipImg[5],300,(15 + 25*5));
+		ctx.drawImage(shipImg[5],300,(40 + 25*5));
 		};
 	shipImg[6].onload = function(){
-		ctx.drawImage(shipImg[6],365,(15 + 25*2));
+		ctx.drawImage(shipImg[6],365,(40 + 25*2));
 		};
 	shipImg[7].onload = function(){
-		ctx.drawImage(shipImg[7],365,(15 + 25*3));
+		ctx.drawImage(shipImg[7],365,(40 + 25*3));
 		};
 	shipImg[8].onload = function(){
-		ctx.drawImage(shipImg[8],365,(15 + 25*4));
+		ctx.drawImage(shipImg[8],365,(40 + 25*4));
 		};
 	shipImg[9].onload = function(){
-		ctx.drawImage(shipImg[9],365,(15 + 25*5));
+		ctx.drawImage(shipImg[9],365,(40 + 25*5));
 		};
 	
 	shipImg[0].src="img/4sqship.png"
@@ -98,5 +98,7 @@ function draw(canvas) {
 	for (i=6;i<=9;i++) {
 		shipImg[i].src="img/1sqship.png"
 	}
+	
+	ctx.strokeRect(290,30,110,170)
 	
 }
