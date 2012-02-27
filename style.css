@@ -157,6 +157,21 @@ table {
 	display: none;
 }
 
+#history {
+	background-color: #0C1C27;
+	border:1px solid black;
+	position:absolute;
+	width: 600px;
+	height:300px;
+	top:50%;
+	left:50%;
+	margin-left:-300px;
+	margin-top:-150px;
+	z-index:4;
+	padding: 15px;
+	display: none;
+}
+
 #lobby {
 	background-color: #0C1C27;
 	border:1px solid black;
