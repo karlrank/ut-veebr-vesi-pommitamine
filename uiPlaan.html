@@ -1,19 +1,12 @@
 <!DOCTYPE html>
 	<html>
 	<head>
+		<meta charset="utf-8" />
 		<title>BATTLESHIP</title>
 		<link rel="stylesheet" type="text/css" href="style.css" />
 		<script type="text/javascript" src="jquery-1.7.1.js"></script>
+		<script type="text/javascript" src="navigation.js"></script>
 		<script type="text/javascript" src="script.js"></script>
-		<script type="text/javascript">
-
-var c=document.;
-alert(c)
-var ctx=c.getContext("2d");
-ctx.fillStyle="#FF0000";
-ctx.fillRect(0,0,150,150);
-
-</script>
 	</head>
 	
 	<body>
@@ -53,7 +46,7 @@ ctx.fillRect(0,0,150,150);
 			<div id="content">
 				<div id="chatBox">
 					<div id="formContainer">
-						<form action="">
+						<form action="GET">
 							<input type="text" name="text">
 							<input type='submit' name='Submit' value='Submit' />
 						</form>
@@ -67,71 +60,71 @@ ctx.fillRect(0,0,150,150);
 				</script>
 				<div id="help">
 					<div class="popupText">
-						M‰ngus osaleb kaks m‰ngijat.
-						M‰ngijad liituvad m‰ngu l‰bi nn. lobby, kus on n‰ha kıiki k‰imasolevaid m‰nge, vıimalus uut m‰ngu luua vıi liituda mıne olemasoleva m‰nguga, kus osalemas t‰pselt ¸ks m‰ngija.
-						M‰ngu eesm‰rgiks on vıita vastasm‰ngijat, uputades pommitamisega kıik vastasm‰ngija laevad.
-						Kummalgi m‰ngijal on oma 10x10 m‰nguv‰li.
-						Enne m‰ngu alustamist paigutab kumbki m‰ngija oma m‰nguv‰ljale oma laevastiku, kuhu kuuluvad:
-						‹ks nelja ruudu pikkune laev
+						M√§ngus osaleb kaks m√§ngijat.
+						M√§ngijad liituvad m√§ngu l√§bi nn. lobby, kus on n√§ha k√µiki k√§imasolevaid m√§nge, v√µimalus uut m√§ngu luua v√µi liituda m√µne olemasoleva m√§nguga, kus osalemas t√§pselt √ºks m√§ngija.
+						M√§ngu eesm√§rgiks on v√µita vastasm√§ngijat, uputades pommitamisega k√µik vastasm√§ngija laevad.
+						Kummalgi m√§ngijal on oma 10x10 m√§nguv√§li.
+						Enne m√§ngu alustamist paigutab kumbki m√§ngija oma m√§nguv√§ljale oma laevastiku, kuhu kuuluvad:
+						√úks nelja ruudu pikkune laev
 						Kaks kolme ruudu pikkust laeva
 						Kolm kahe ruudu pikkust laeva
-						Neli ¸he ruudu pikkust laeva
-						Vastasm‰ngija m‰nguv‰li on m‰ngijale n‰htav, sellele paigutatud laevastik enne m‰ngu alustamist aga mitte.
-						Laevade paigutamine m‰nguv‰ljakule toimub hiirekursori abil
-						M‰nguv‰ljakule paigutatud laevad ei tohi omavahel ei k¸ljetsi ega nurgiti kokku puutuda
-						Kıik laevad on sirge kujuga, "tetrise" kujulisi laevu m‰ngus ei eksisteeri
-						Juba asetatud laevu peab saama m‰nguv‰ljakul ringi paigutada, seni kuni m‰ngija ei ole valikut lıplikult kinnitanud
-						Peab eksisteerima vıimalus kinnitada oma laevastiku lıplik paigutus m‰nguv‰ljakul m‰ngu alustamiseks
-						M‰ng algab hetkel kui mılemad m‰ngijad on oma laevastiku v‰ljakule pai
-						M‰ngus osaleb kaks m‰ngijat.
-						M‰ngijad liituvad m‰ngu l‰bi nn. lobby, kus on n‰ha kıiki k‰imasolevaid m‰nge, vıimalus uut m‰ngu luua vıi liituda mıne olemasoleva m‰nguga, kus osalemas t‰pselt ¸ks m‰ngija.
-						M‰ngu eesm‰rgiks on vıita vastasm‰ngijat, uputades pommitamisega kıik vastasm‰ngija laevad.
-						Kummalgi m‰ngijal on oma 10x10 m‰nguv‰li.
-						Enne m‰ngu alustamist paigutab kumbki m‰ngija oma m‰nguv‰ljale oma laevastiku, kuhu kuuluvad:
-						‹ks nelja ruudu pikkune laev
+						Neli √ºhe ruudu pikkust laeva
+						Vastasm√§ngija m√§nguv√§li on m√§ngijale n√§htav, sellele paigutatud laevastik enne m√§ngu alustamist aga mitte.
+						Laevade paigutamine m√§nguv√§ljakule toimub hiirekursori abil
+						M√§nguv√§ljakule paigutatud laevad ei tohi omavahel ei k√ºljetsi ega nurgiti kokku puutuda
+						K√µik laevad on sirge kujuga, "tetrise" kujulisi laevu m√§ngus ei eksisteeri
+						Juba asetatud laevu peab saama m√§nguv√§ljakul ringi paigutada, seni kuni m√§ngija ei ole valikut l√µplikult kinnitanud
+						Peab eksisteerima v√µimalus kinnitada oma laevastiku l√µplik paigutus m√§nguv√§ljakul m√§ngu alustamiseks
+						M√§ng algab hetkel kui m√µlemad m√§ngijad on oma laevastiku v√§ljakule pai
+						M√§ngus osaleb kaks m√§ngijat.
+						M√§ngijad liituvad m√§ngu l√§bi nn. lobby, kus on n√§ha k√µiki k√§imasolevaid m√§nge, v√µimalus uut m√§ngu luua v√µi liituda m√µne olemasoleva m√§nguga, kus osalemas t√§pselt √ºks m√§ngija.
+						M√§ngu eesm√§rgiks on v√µita vastasm√§ngijat, uputades pommitamisega k√µik vastasm√§ngija laevad.
+						Kummalgi m√§ngijal on oma 10x10 m√§nguv√§li.
+						Enne m√§ngu alustamist paigutab kumbki m√§ngija oma m√§nguv√§ljale oma laevastiku, kuhu kuuluvad:
+						√úks nelja ruudu pikkune laev
 						Kaks kolme ruudu pikkust laeva
 						Kolm kahe ruudu pikkust laeva
-						Neli ¸he ruudu pikkust laeva
-						Vastasm‰ngija m‰nguv‰li on m‰ngijale n‰htav, sellele paigutatud laevastik enne m‰ngu alustamist aga mitte.
-						Laevade paigutamine m‰nguv‰ljakule toimub hiirekursori abil
-						M‰nguv‰ljakule paigutatud laevad ei tohi omavahel ei k¸ljetsi ega nurgiti kokku puutuda
-						Kıik laevad on sirge kujuga, "tetrise" kujulisi laevu m‰ngus ei eksisteeri
-						Juba asetatud laevu peab saama m‰nguv‰ljakul ringi paigutada, seni kuni m‰ngija ei ole valikut lıplikult kinnitanud
-						Peab eksisteerima vıimalus kinnitada oma laevastiku lıplik paigutus m‰nguv‰ljakul m‰ngu alustamiseks
-						M‰ng algab hetkel kui mılemad m‰ngijad on oma laevastiku v‰ljakule pai
+						Neli √ºhe ruudu pikkust laeva
+						Vastasm√§ngija m√§nguv√§li on m√§ngijale n√§htav, sellele paigutatud laevastik enne m√§ngu alustamist aga mitte.
+						Laevade paigutamine m√§nguv√§ljakule toimub hiirekursori abil
+						M√§nguv√§ljakule paigutatud laevad ei tohi omavahel ei k√ºljetsi ega nurgiti kokku puutuda
+						K√µik laevad on sirge kujuga, "tetrise" kujulisi laevu m√§ngus ei eksisteeri
+						Juba asetatud laevu peab saama m√§nguv√§ljakul ringi paigutada, seni kuni m√§ngija ei ole valikut l√µplikult kinnitanud
+						Peab eksisteerima v√µimalus kinnitada oma laevastiku l√µplik paigutus m√§nguv√§ljakul m√§ngu alustamiseks
+						M√§ng algab hetkel kui m√µlemad m√§ngijad on oma laevastiku v√§ljakule pai
 						
-						M‰ngus osaleb kaks m‰ngijat.
-						M‰ngijad liituvad m‰ngu l‰bi nn. lobby, kus on n‰ha kıiki k‰imasolevaid m‰nge, vıimalus uut m‰ngu luua vıi liituda mıne olemasoleva m‰nguga, kus osalemas t‰pselt ¸ks m‰ngija.
-						M‰ngu eesm‰rgiks on vıita vastasm‰ngijat, uputades pommitamisega kıik vastasm‰ngija laevad.
-						Kummalgi m‰ngijal on oma 10x10 m‰nguv‰li.
-						Enne m‰ngu alustamist paigutab kumbki m‰ngija oma m‰nguv‰ljale oma laevastiku, kuhu kuuluvad:
-						‹ks nelja ruudu pikkune laev
+						M√§ngus osaleb kaks m√§ngijat.
+						M√§ngijad liituvad m√§ngu l√§bi nn. lobby, kus on n√§ha k√µiki k√§imasolevaid m√§nge, v√µimalus uut m√§ngu luua v√µi liituda m√µne olemasoleva m√§nguga, kus osalemas t√§pselt √ºks m√§ngija.
+						M√§ngu eesm√§rgiks on v√µita vastasm√§ngijat, uputades pommitamisega k√µik vastasm√§ngija laevad.
+						Kummalgi m√§ngijal on oma 10x10 m√§nguv√§li.
+						Enne m√§ngu alustamist paigutab kumbki m√§ngija oma m√§nguv√§ljale oma laevastiku, kuhu kuuluvad:
+						√úks nelja ruudu pikkune laev
 						Kaks kolme ruudu pikkust laeva
 						Kolm kahe ruudu pikkust laeva
-						Neli ¸he ruudu pikkust laeva
-						Vastasm‰ngija m‰nguv‰li on m‰ngijale n‰htav, sellele paigutatud laevastik enne m‰ngu alustamist aga mitte.
-						Laevade paigutamine m‰nguv‰ljakule toimub hiirekursori abil
-						M‰nguv‰ljakule paigutatud laevad ei tohi omavahel ei k¸ljetsi ega nurgiti kokku puutuda
-						Kıik laevad on sirge kujuga, "tetrise" kujulisi laevu m‰ngus ei eksisteeri
-						Juba asetatud laevu peab saama m‰nguv‰ljakul ringi paigutada, seni kuni m‰ngija ei ole valikut lıplikult kinnitanud
-						Peab eksisteerima vıimalus kinnitada oma laevastiku lıplik paigutus m‰nguv‰ljakul m‰ngu alustamiseks
-						M‰ng algab hetkel kui mılemad m‰ngijad on oma laevastiku v‰ljakule pai
-						M‰ngus osaleb kaks m‰ngijat.
-						M‰ngijad liituvad m‰ngu l‰bi nn. lobby, kus on n‰ha kıiki k‰imasolevaid m‰nge, vıimalus uut m‰ngu luua vıi liituda mıne olemasoleva m‰nguga, kus osalemas t‰pselt ¸ks m‰ngija.
-						M‰ngu eesm‰rgiks on vıita vastasm‰ngijat, uputades pommitamisega kıik vastasm‰ngija laevad.
-						Kummalgi m‰ngijal on oma 10x10 m‰nguv‰li.
-						Enne m‰ngu alustamist paigutab kumbki m‰ngija oma m‰nguv‰ljale oma laevastiku, kuhu kuuluvad:
-						‹ks nelja ruudu pikkune laev
+						Neli √ºhe ruudu pikkust laeva
+						Vastasm√§ngija m√§nguv√§li on m√§ngijale n√§htav, sellele paigutatud laevastik enne m√§ngu alustamist aga mitte.
+						Laevade paigutamine m√§nguv√§ljakule toimub hiirekursori abil
+						M√§nguv√§ljakule paigutatud laevad ei tohi omavahel ei k√ºljetsi ega nurgiti kokku puutuda
+						K√µik laevad on sirge kujuga, "tetrise" kujulisi laevu m√§ngus ei eksisteeri
+						Juba asetatud laevu peab saama m√§nguv√§ljakul ringi paigutada, seni kuni m√§ngija ei ole valikut l√µplikult kinnitanud
+						Peab eksisteerima v√µimalus kinnitada oma laevastiku l√µplik paigutus m√§nguv√§ljakul m√§ngu alustamiseks
+						M√§ng algab hetkel kui m√µlemad m√§ngijad on oma laevastiku v√§ljakule pai
+						M√§ngus osaleb kaks m√§ngijat.
+						M√§ngijad liituvad m√§ngu l√§bi nn. lobby, kus on n√§ha k√µiki k√§imasolevaid m√§nge, v√µimalus uut m√§ngu luua v√µi liituda m√µne olemasoleva m√§nguga, kus osalemas t√§pselt √ºks m√§ngija.
+						M√§ngu eesm√§rgiks on v√µita vastasm√§ngijat, uputades pommitamisega k√µik vastasm√§ngija laevad.
+						Kummalgi m√§ngijal on oma 10x10 m√§nguv√§li.
+						Enne m√§ngu alustamist paigutab kumbki m√§ngija oma m√§nguv√§ljale oma laevastiku, kuhu kuuluvad:
+						√úks nelja ruudu pikkune laev
 						Kaks kolme ruudu pikkust laeva
 						Kolm kahe ruudu pikkust laeva
-						Neli ¸he ruudu pikkust laeva
-						Vastasm‰ngija m‰nguv‰li on m‰ngijale n‰htav, sellele paigutatud laevastik enne m‰ngu alustamist aga mitte.
-						Laevade paigutamine m‰nguv‰ljakule toimub hiirekursori abil
-						M‰nguv‰ljakule paigutatud laevad ei tohi omavahel ei k¸ljetsi ega nurgiti kokku puutuda
-						Kıik laevad on sirge kujuga, "tetrise" kujulisi laevu m‰ngus ei eksisteeri
-						Juba asetatud laevu peab saama m‰nguv‰ljakul ringi paigutada, seni kuni m‰ngija ei ole valikut lıplikult kinnitanud
-						Peab eksisteerima vıimalus kinnitada oma laevastiku lıplik paigutus m‰nguv‰ljakul m‰ngu alustamiseks
-						M‰ng algab hetkel kui mılemad m‰ngijad on oma laevastiku v‰ljakule pai
+						Neli √ºhe ruudu pikkust laeva
+						Vastasm√§ngija m√§nguv√§li on m√§ngijale n√§htav, sellele paigutatud laevastik enne m√§ngu alustamist aga mitte.
+						Laevade paigutamine m√§nguv√§ljakule toimub hiirekursori abil
+						M√§nguv√§ljakule paigutatud laevad ei tohi omavahel ei k√ºljetsi ega nurgiti kokku puutuda
+						K√µik laevad on sirge kujuga, "tetrise" kujulisi laevu m√§ngus ei eksisteeri
+						Juba asetatud laevu peab saama m√§nguv√§ljakul ringi paigutada, seni kuni m√§ngija ei ole valikut l√µplikult kinnitanud
+						Peab eksisteerima v√µimalus kinnitada oma laevastiku l√µplik paigutus m√§nguv√§ljakul m√§ngu alustamiseks
+						M√§ng algab hetkel kui m√µlemad m√§ngijad on oma laevastiku v√§ljakule pai
 					</div>
 					<div class="closeButtonContainer">
 						<a href="javascript:toggleHelp()">
@@ -239,29 +232,29 @@ ctx.fillRect(0,0,150,150);
 							<tr>
 								<th>Game Name</th><th>Game Owner</th><th>Join</th>
 							</tr>
-							<tr><td>Mina Siin m‰ng 1</td><td>Mina Siin</td><td>Join</td></tr>
-							<tr><td>Mina Siin m‰ng 2</td><td>Mina Siin</td><td>Join</td></tr>
-							<tr><td>Mina Siin m‰ng 3</td><td>Mina Siin</td><td>Join</td></tr>
-							<tr><td>Mina Siin m‰ng 4</td><td>Mina Siin</td><td>Join</td></tr>
-							<tr><td>Mina Siin m‰ng 5</td><td>Mina Siin</td><td>Join</td></tr>
-							<tr><td>Mina Siin m‰ng 6</td><td>Mina Siin</td><td>Join</td></tr>
-							<tr><td>Mina Siin m‰ng 7</td><td>Mina Siin</td><td>Join</td></tr>
-							<tr><td>Mina Siin m‰ng 8</td><td>Mina Siin</td><td>Join</td></tr>
-							<tr><td>Mina Siin m‰ng 8</td><td>Mina Siin</td><td>Join</td></tr>
-							<tr><td>Mina Siin m‰ng 8</td><td>Mina Siin</td><td>Join</td></tr>
-							<tr><td>Mina Siin m‰ng 8</td><td>Mina Siin</td><td>Join</td></tr>
-							<tr><td>Mina Siin m‰ng 8</td><td>Mina Siin</td><td>Join</td></tr>
-							<tr><td>Mina Siin m‰ng 8</td><td>Mina Siin</td><td>Join</td></tr>
-							<tr><td>Mina Siin m‰ng 8</td><td>Mina Siin</td><td>Join</td></tr>
-							<tr><td>Mina Siin m‰ng 8</td><td>Mina Siin</td><td>Join</td></tr>
-							<tr><td>Mina Siin m‰ng 8</td><td>Mina Siin</td><td>Join</td></tr>
-							<tr><td>Mina Siin m‰ng 8</td><td>Mina Siin</td><td>Join</td></tr>
-							<tr><td>Mina Siin m‰ng 8</td><td>Mina Siin</td><td>Join</td></tr>
-							<tr><td>Mina Siin m‰ng 8</td><td>Mina Siin</td><td>Join</td></tr>
-							<tr><td>Mina Siin m‰ng 8</td><td>Mina Siin</td><td>Join</td></tr>
-							<tr><td>Mina Siin m‰ng 8</td><td>Mina Siin</td><td>Join</td></tr>
-							<tr><td>Mina Siin m‰ng 8</td><td>Mina Siin</td><td>Join</td></tr>
-							<tr><td>Mina Siin m‰ng 8</td><td>Mina Siin</td><td>Join</td></tr>
+							<tr><td>Mina Siin m√§ng 1</td><td>Mina Siin</td><td>Join</td></tr>
+							<tr><td>Mina Siin m√§ng 2</td><td>Mina Siin</td><td>Join</td></tr>
+							<tr><td>Mina Siin m√§ng 3</td><td>Mina Siin</td><td>Join</td></tr>
+							<tr><td>Mina Siin m√§ng 4</td><td>Mina Siin</td><td>Join</td></tr>
+							<tr><td>Mina Siin m√§ng 5</td><td>Mina Siin</td><td>Join</td></tr>
+							<tr><td>Mina Siin m√§ng 6</td><td>Mina Siin</td><td>Join</td></tr>
+							<tr><td>Mina Siin m√§ng 7</td><td>Mina Siin</td><td>Join</td></tr>
+							<tr><td>Mina Siin m√§ng 8</td><td>Mina Siin</td><td>Join</td></tr>
+							<tr><td>Mina Siin m√§ng 8</td><td>Mina Siin</td><td>Join</td></tr>
+							<tr><td>Mina Siin m√§ng 8</td><td>Mina Siin</td><td>Join</td></tr>
+							<tr><td>Mina Siin m√§ng 8</td><td>Mina Siin</td><td>Join</td></tr>
+							<tr><td>Mina Siin m√§ng 8</td><td>Mina Siin</td><td>Join</td></tr>
+							<tr><td>Mina Siin m√§ng 8</td><td>Mina Siin</td><td>Join</td></tr>
+							<tr><td>Mina Siin m√§ng 8</td><td>Mina Siin</td><td>Join</td></tr>
+							<tr><td>Mina Siin m√§ng 8</td><td>Mina Siin</td><td>Join</td></tr>
+							<tr><td>Mina Siin m√§ng 8</td><td>Mina Siin</td><td>Join</td></tr>
+							<tr><td>Mina Siin m√§ng 8</td><td>Mina Siin</td><td>Join</td></tr>
+							<tr><td>Mina Siin m√§ng 8</td><td>Mina Siin</td><td>Join</td></tr>
+							<tr><td>Mina Siin m√§ng 8</td><td>Mina Siin</td><td>Join</td></tr>
+							<tr><td>Mina Siin m√§ng 8</td><td>Mina Siin</td><td>Join</td></tr>
+							<tr><td>Mina Siin m√§ng 8</td><td>Mina Siin</td><td>Join</td></tr>
+							<tr><td>Mina Siin m√§ng 8</td><td>Mina Siin</td><td>Join</td></tr>
+							<tr><td>Mina Siin m√§ng 8</td><td>Mina Siin</td><td>Join</td></tr>
 							
 						</table>
 					</div>
