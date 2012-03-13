@@ -16,6 +16,10 @@ table {
 }
 
 #gameField {
+	position:absolute;
+	z-index:10;
+	width:875px;
+	height:500px;
 	border:1px solid black;
 	display: none;	
 }
