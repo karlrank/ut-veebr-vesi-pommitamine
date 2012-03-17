@@ -5,8 +5,8 @@
 		<title>BATTLESHIP</title>
 		<link rel="stylesheet" type="text/css" href="style.css" />
 		<script type="text/javascript" src="lib/jquery-1.7.1.js"></script>
-		<script type="text/javascript" src="lib/kinetic-v3.8.3.js"></script>
 		<script type="text/javascript" src="navigation.js"></script>
+		<script type="text/javascript" src="script.js"></script>
 		<script type="text/javascript" src="gamefield.js"></script>
 	</head>
 	
@@ -53,8 +53,12 @@
 						</form>
 					</div>
 				</div>
-				<div id="gameField">
-				</div>
+				<canvas id="gameField" width="875" height="500">
+					Your browser does not support the canvas element.
+				</canvas>
+				<script type="text/javascript">
+					draw(document.getElementById("gameField"));
+				</script>
 				<div id="help">
 					<div class="popupText">
 						Mängus osaleb kaks mängijat.
