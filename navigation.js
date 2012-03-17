@@ -23,7 +23,9 @@ function showPlayField() {
 	$("#help").hide();
 	$("#rankings").hide();
 	$("#lobby").hide();
-	$("#gameField").show();
+	$("#history").hide();
+	$("#playField").show();
+	$("#oppField").show();
 	$("#chatBox").show();
 }
 
@@ -31,7 +33,8 @@ function clean() {
 	$("#help").hide();
 	$("#rankings").hide();
 	$("#lobby").hide();
-	$("#gameField").hide();
+	$("#playField").hide();
+	$("#oppField").hide();
 	$("chatBox").hide();
 }
 

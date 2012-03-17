@@ -15,9 +15,32 @@ table {
 	width:100%;
 }
 
-#gameField {
-	border:1px solid black;
-	display: none;	
+#playField {
+        display: none;
+        position:absolute;
+        top: 15px;
+        left: 15px;
+        background-image: url('img/own_field.png');
+}
+
+#playField table {
+	height:220px;
+	width: 220px;
+	
+}
+
+#oppField {
+        display: none;
+        position:absolute;
+        bottom: 15px;
+        right: 15px;
+        background-image: url('img/play_field.png');
+}
+
+#oppField table {
+	height:330px;
+	width: 330px;
+	
 }
 
 #main {
