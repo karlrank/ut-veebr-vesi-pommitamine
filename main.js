@@ -3,21 +3,38 @@ $(document).ready(function() {
 	
 	$("#playField td").click(function(event){
 		td = event.target;
+		if (server.ownField[td.parentElement.rowIndex - 1][td.cellIndex - 1] == 1){
+			server.ownField[td.parentElement.rowIndex - 1][td.cellIndex - 1] = 0;
+			server.confirmShips();
+		}
+		else if (server.ownField[td.parentElement.rowIndex - 1][td.cellIndex - 1] == 0) {
+			server.ownField[td.parentElement.rowIndex - 1][td.cellIndex - 1] = 1;
+			if(!server.confirmShips()) {
+				server.ownField[td.parentElement.rowIndex - 1][td.cellIndex - 1] = 0;
+				alert("Illegal ship placement!");
+			}
+		}
+	});
+	
+	/*
+	$("#playField td").click(function(event){
+		td = event.target;
 		if (td.cellIndex!=0 & td.parentElement.rowIndex!=0){ //if correct square is clicked
 			server.ownField[td.parentElement.rowIndex - 1][td.cellIndex - 1] = 1;
 			confirmShipPlacement(true);
 		}
 	});
 	if (server.ready()==true){
-		writeBox"Sinu kord");
+//		writeBox"Sinu kord");
 		$("#oppField of").click(function(event){
 			of = event.target;
 			if (of.cellIndex!=0 & of.parentElement.rowIndex!=0){ //if correct square is clicked
 				server.registerShot(new Array([td.parentElement.rowIndex - 1],[td.cellIndex - 1]));
 			}
 		if (server.isGameOver()==1){
-			writeChat("Sinu Võit");
+//			writeChat("Sinu Võit");
 		}
 		} 
 	}
+	*/
 });
