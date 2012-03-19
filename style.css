@@ -245,3 +245,8 @@ a {
 #lobbyButton {
 	display: none;
 }
+
+.laev {
+	background-image: url('img/explosion.png');
+	
+}
