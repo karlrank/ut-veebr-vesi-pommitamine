@@ -1,4 +1,4 @@
-.shipMidEW {
+.shipMidEW  {
 	background-image: url('img/ships/MidEW.png');
 }
 
@@ -33,6 +33,11 @@
 .ripple {
 	background-image: url('img/Ripple30px.png');
 }
+
 .ripple_s {
 	background-image: url('img/Ripple20px.png');
+}
+
+.explosion_s {
+	background-image: url('img/explosion_s.png');
 }

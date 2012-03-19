@@ -1,56 +1,38 @@
 <!DOCTYPE html>
-	<html>
-	<head>
-		<meta charset="utf-8" />
-		<title>BATTLESHIP</title>
-		<link rel="stylesheet" type="text/css" href="style.css" />
-		<link rel="stylesheet" type="text/css" href="ships.css" />
-		<script type="text/javascript" src="lib/jquery-1.7.1.js"></script>
-		<script type="text/javascript" src="navigation.js"></script>
-		<script type="text/javascript" src="server.js"></script>
-		<script type="text/javascript" src="ship.js"></script>
-		<script type="text/javascript" src="main.js"></script>
-	</head>
-	
-	<body>
-		<div id="main">
-			<div id="menu">
-				<a href="">
-					<div class="button">
-						Home
-					</div>
-				</a>
-				<a href="javascript:showPlayField()">
-					<div class="button">
-						Play
-					</div>
-				</a>
-				<a href="javascript:exitGame()" id="lobbyButton">
-					<div class="button">
-						Lobby
-					</div>
-				</a>
-				<a href="javascript:toggleRankings()">
-					<div class="button">
-						Rankings
-					</div>
-				</a>
-				<a href="javascript:toggleHistory()">
-					<div class="button">
-						History
-					</div>
-				</a>
-				<a href="javascript:toggleHelp()">
-					<div class="button">
-						Rules/Help
-					</div>
-				</a>
-			</div>
-			<div id="content">
-				<div id="chatBox">
-					<div id="chatField">
-					</div>
-					<!--
+<html>
+<head>
+<meta charset="utf-8" />
+<title>BATTLESHIP</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<link rel="stylesheet" type="text/css" href="ships.css" />
+<script type="text/javascript" src="lib/jquery-1.7.1.js"></script>
+<script type="text/javascript" src="navigation.js"></script>
+<script type="text/javascript" src="server.js"></script>
+<script type="text/javascript" src="ship.js"></script>
+<script type="text/javascript" src="main.js"></script>
+</head>
+
+<body>
+	<div id="main">
+		<div id="menu">
+			<a href="">
+				<div class="button">Home</div>
+			</a> <a href="javascript:showPlayField()">
+				<div class="button">Play</div>
+			</a> <a href="javascript:exitGame()" id="lobbyButton">
+				<div class="button">Lobby</div>
+			</a> <a href="javascript:toggleRankings()">
+				<div class="button">Rankings</div>
+			</a> <a href="javascript:toggleHistory()">
+				<div class="button">History</div>
+			</a> <a href="javascript:toggleHelp()">
+				<div class="button">Rules/Help</div>
+			</a>
+		</div>
+		<div id="content">
+			<div id="chatBox">
+				<div id="chatField"></div>
+				<!--
 					<div id="formContainer">
 						<form action="GET">
 							<input id="chatField" type="text" name="text">
@@ -58,64 +40,152 @@
 						</form>
 					</div>
 					-->
-				</div>
+			</div>
 			<div id="playField">
 				<table>
 					<tbody>
 						<tr>
 							<td></td>
-							<td></td><td></td><td></td><td></td><td></td>
-							<td></td><td></td><td></td><td></td><td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
 						</tr>
 						<tr>
 							<td></td>
-							<td></td><td></td><td></td><td></td><td></td>
-							<td></td><td></td><td></td><td></td><td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
 						</tr>
 						<tr>
 							<td></td>
-							<td></td><td></td><td></td><td></td><td></td>
-							<td></td><td></td><td></td><td></td><td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
 						</tr>
 						<tr>
 							<td></td>
-							<td></td><td></td><td></td><td></td><td></td>
-							<td></td><td></td><td></td><td></td><td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
 						</tr>
 						<tr>
 							<td></td>
-							<td></td><td></td><td></td><td></td><td></td>
-							<td></td><td></td><td></td><td></td><td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
 						</tr>
 						<tr>
 							<td></td>
-							<td></td><td></td><td></td><td></td><td></td>
-							<td></td><td></td><td></td><td></td><td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
 						</tr>
 						<tr>
 							<td></td>
-							<td></td><td></td><td></td><td></td><td></td>
-							<td></td><td></td><td></td><td></td><td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
 						</tr>
 						<tr>
 							<td></td>
-							<td></td><td></td><td></td><td></td><td></td>
-							<td></td><td></td><td></td><td></td><td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
 						</tr>
 						<tr>
 							<td></td>
-							<td></td><td></td><td></td><td></td><td></td>
-							<td></td><td></td><td></td><td></td><td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
 						</tr>
 						<tr>
 							<td></td>
-							<td></td><td></td><td></td><td></td><td></td>
-							<td></td><td></td><td></td><td></td><td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
 						</tr>
 						<tr>
 							<td></td>
-							<td></td><td></td><td></td><td></td><td></td>
-							<td></td><td></td><td></td><td></td><td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
 						</tr>
 					</tbody>
 				</table>
@@ -125,277 +195,582 @@
 					<tbody>
 						<tr>
 							<td></td>
-							<td"></td><td></td><td></td><td></td><td></td>
-							<td></td><td></td><td></td><td></td><td></td>
+							<td"></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
 						</tr>
 						<tr>
 							<td></td>
-							<td></td><td></td><td></td><td></td><td></td>
-							<td></td><td></td><td></td><td></td><td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
 						</tr>
 						<tr>
 							<td></td>
-							<td></td><td></td><td></td><td></td><td></td>
-							<td></td><td></td><td></td><td></td><td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
 						</tr>
 						<tr>
 							<td></td>
-							<td></td><td></td><td></td><td></td><td></td>
-							<td></td><td></td><td></td><td></td><td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
 						</tr>
 						<tr>
 							<td></td>
-							<td></td><td></td><td></td><td></td><td></td>
-							<td></td><td></td><td></td><td></td><td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
 						</tr>
 						<tr>
 							<td></td>
-							<td></td><td></td><td></td><td></td><td></td>
-							<td></td><td></td><td></td><td></td><td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
 						</tr>
 						<tr>
 							<td></td>
-							<td></td><td></td><td></td><td></td><td></td>
-							<td></td><td></td><td></td><td></td><td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
 						</tr>
 						<tr>
 							<td></td>
-							<td></td><td></td><td></td><td></td><td></td>
-							<td></td><td></td><td></td><td></td><td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
 						</tr>
 						<tr>
 							<td></td>
-							<td></td><td></td><td></td><td></td><td></td>
-							<td></td><td></td><td></td><td></td><td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
 						</tr>
 						<tr>
 							<td></td>
-							<td></td><td></td><td></td><td></td><td></td>
-							<td></td><td></td><td></td><td></td><td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
 						</tr>
 						<tr>
 							<td></td>
-							<td></td><td></td><td></td><td></td><td></td>
-							<td></td><td></td><td></td><td></td><td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
 						</tr>
 					</tbody>
 				</table>
 			</div>
 			<div id="confirmButton">
 				<a href="javascript:clickConfirm()">
-					<div class="button">
-						Confirm
-					</div>
+					<div class="button">Confirm</div>
 				</a>
 			</div>
 			<div id="help">
-					<div class="popupText">
-						Mängus osaleb kaks mängijat.
-						Mängijad liituvad mängu läbi nn. lobby, kus on näha kõiki käimasolevaid mänge, võimalus uut mängu luua või liituda mõne olemasoleva mänguga, kus osalemas täpselt üks mängija.
-						Mängu eesmärgiks on võita vastasmängijat, uputades pommitamisega kõik vastasmängija laevad.
-						Kummalgi mängijal on oma 10x10 mänguväli.
-						Enne mängu alustamist paigutab kumbki mängija oma mänguväljale oma laevastiku, kuhu kuuluvad:
-						Üks nelja ruudu pikkune laev
-						Kaks kolme ruudu pikkust laeva
-						Kolm kahe ruudu pikkust laeva
-						Neli ühe ruudu pikkust laeva
-						Vastasmängija mänguväli on mängijale nähtav, sellele paigutatud laevastik enne mängu alustamist aga mitte.
-						Laevade paigutamine mänguväljakule toimub hiirekursori abil
-						Mänguväljakule paigutatud laevad ei tohi omavahel ei küljetsi ega nurgiti kokku puutuda
-						Kõik laevad on sirge kujuga, "tetrise" kujulisi laevu mängus ei eksisteeri
-						Juba asetatud laevu peab saama mänguväljakul ringi paigutada, seni kuni mängija ei ole valikut lõplikult kinnitanud
-						Peab eksisteerima võimalus kinnitada oma laevastiku lõplik paigutus mänguväljakul mängu alustamiseks
-						Mäng algab hetkel kui mõlemad mängijad on oma laevastiku väljakule pai
-						Mängus osaleb kaks mängijat.
-						Mängijad liituvad mängu läbi nn. lobby, kus on näha kõiki käimasolevaid mänge, võimalus uut mängu luua või liituda mõne olemasoleva mänguga, kus osalemas täpselt üks mängija.
-						Mängu eesmärgiks on võita vastasmängijat, uputades pommitamisega kõik vastasmängija laevad.
-						Kummalgi mängijal on oma 10x10 mänguväli.
-						Enne mängu alustamist paigutab kumbki mängija oma mänguväljale oma laevastiku, kuhu kuuluvad:
-						Üks nelja ruudu pikkune laev
-						Kaks kolme ruudu pikkust laeva
-						Kolm kahe ruudu pikkust laeva
-						Neli ühe ruudu pikkust laeva
-						Vastasmängija mänguväli on mängijale nähtav, sellele paigutatud laevastik enne mängu alustamist aga mitte.
-						Laevade paigutamine mänguväljakule toimub hiirekursori abil
-						Mänguväljakule paigutatud laevad ei tohi omavahel ei küljetsi ega nurgiti kokku puutuda
-						Kõik laevad on sirge kujuga, "tetrise" kujulisi laevu mängus ei eksisteeri
-						Juba asetatud laevu peab saama mänguväljakul ringi paigutada, seni kuni mängija ei ole valikut lõplikult kinnitanud
-						Peab eksisteerima võimalus kinnitada oma laevastiku lõplik paigutus mänguväljakul mängu alustamiseks
-						Mäng algab hetkel kui mõlemad mängijad on oma laevastiku väljakule pai
-						
-						Mängus osaleb kaks mängijat.
-						Mängijad liituvad mängu läbi nn. lobby, kus on näha kõiki käimasolevaid mänge, võimalus uut mängu luua või liituda mõne olemasoleva mänguga, kus osalemas täpselt üks mängija.
-						Mängu eesmärgiks on võita vastasmängijat, uputades pommitamisega kõik vastasmängija laevad.
-						Kummalgi mängijal on oma 10x10 mänguväli.
-						Enne mängu alustamist paigutab kumbki mängija oma mänguväljale oma laevastiku, kuhu kuuluvad:
-						Üks nelja ruudu pikkune laev
-						Kaks kolme ruudu pikkust laeva
-						Kolm kahe ruudu pikkust laeva
-						Neli ühe ruudu pikkust laeva
-						Vastasmängija mänguväli on mängijale nähtav, sellele paigutatud laevastik enne mängu alustamist aga mitte.
-						Laevade paigutamine mänguväljakule toimub hiirekursori abil
-						Mänguväljakule paigutatud laevad ei tohi omavahel ei küljetsi ega nurgiti kokku puutuda
-						Kõik laevad on sirge kujuga, "tetrise" kujulisi laevu mängus ei eksisteeri
-						Juba asetatud laevu peab saama mänguväljakul ringi paigutada, seni kuni mängija ei ole valikut lõplikult kinnitanud
-						Peab eksisteerima võimalus kinnitada oma laevastiku lõplik paigutus mänguväljakul mängu alustamiseks
-						Mäng algab hetkel kui mõlemad mängijad on oma laevastiku väljakule pai
-						Mängus osaleb kaks mängijat.
-						Mängijad liituvad mängu läbi nn. lobby, kus on näha kõiki käimasolevaid mänge, võimalus uut mängu luua või liituda mõne olemasoleva mänguga, kus osalemas täpselt üks mängija.
-						Mängu eesmärgiks on võita vastasmängijat, uputades pommitamisega kõik vastasmängija laevad.
-						Kummalgi mängijal on oma 10x10 mänguväli.
-						Enne mängu alustamist paigutab kumbki mängija oma mänguväljale oma laevastiku, kuhu kuuluvad:
-						Üks nelja ruudu pikkune laev
-						Kaks kolme ruudu pikkust laeva
-						Kolm kahe ruudu pikkust laeva
-						Neli ühe ruudu pikkust laeva
-						Vastasmängija mänguväli on mängijale nähtav, sellele paigutatud laevastik enne mängu alustamist aga mitte.
-						Laevade paigutamine mänguväljakule toimub hiirekursori abil
-						Mänguväljakule paigutatud laevad ei tohi omavahel ei küljetsi ega nurgiti kokku puutuda
-						Kõik laevad on sirge kujuga, "tetrise" kujulisi laevu mängus ei eksisteeri
-						Juba asetatud laevu peab saama mänguväljakul ringi paigutada, seni kuni mängija ei ole valikut lõplikult kinnitanud
-						Peab eksisteerima võimalus kinnitada oma laevastiku lõplik paigutus mänguväljakul mängu alustamiseks
-						Mäng algab hetkel kui mõlemad mängijad on oma laevastiku väljakule pai
-					</div>
-					<div class="closeButtonContainer">
-						<a href="javascript:toggleHelp()">
-							<div class="button">
-								Close
-							</div>
-						</a>
-					</div>
+				<div class="popupText">Mängus osaleb kaks mängijat. Mängijad
+					liituvad mängu läbi nn. lobby, kus on näha kõiki käimasolevaid
+					mänge, võimalus uut mängu luua või liituda mõne olemasoleva
+					mänguga, kus osalemas täpselt üks mängija. Mängu eesmärgiks on
+					võita vastasmängijat, uputades pommitamisega kõik vastasmängija
+					laevad. Kummalgi mängijal on oma 10x10 mänguväli. Enne mängu
+					alustamist paigutab kumbki mängija oma mänguväljale oma laevastiku,
+					kuhu kuuluvad: Üks nelja ruudu pikkune laev Kaks kolme ruudu
+					pikkust laeva Kolm kahe ruudu pikkust laeva Neli ühe ruudu pikkust
+					laeva Vastasmängija mänguväli on mängijale nähtav, sellele
+					paigutatud laevastik enne mängu alustamist aga mitte. Laevade
+					paigutamine mänguväljakule toimub hiirekursori abil Mänguväljakule
+					paigutatud laevad ei tohi omavahel ei küljetsi ega nurgiti kokku
+					puutuda Kõik laevad on sirge kujuga, "tetrise" kujulisi laevu
+					mängus ei eksisteeri Juba asetatud laevu peab saama mänguväljakul
+					ringi paigutada, seni kuni mängija ei ole valikut lõplikult
+					kinnitanud Peab eksisteerima võimalus kinnitada oma laevastiku
+					lõplik paigutus mänguväljakul mängu alustamiseks Mäng algab hetkel
+					kui mõlemad mängijad on oma laevastiku väljakule pai Mängus osaleb
+					kaks mängijat. Mängijad liituvad mängu läbi nn. lobby, kus on näha
+					kõiki käimasolevaid mänge, võimalus uut mängu luua või liituda mõne
+					olemasoleva mänguga, kus osalemas täpselt üks mängija. Mängu
+					eesmärgiks on võita vastasmängijat, uputades pommitamisega kõik
+					vastasmängija laevad. Kummalgi mängijal on oma 10x10 mänguväli.
+					Enne mängu alustamist paigutab kumbki mängija oma mänguväljale oma
+					laevastiku, kuhu kuuluvad: Üks nelja ruudu pikkune laev Kaks kolme
+					ruudu pikkust laeva Kolm kahe ruudu pikkust laeva Neli ühe ruudu
+					pikkust laeva Vastasmängija mänguväli on mängijale nähtav, sellele
+					paigutatud laevastik enne mängu alustamist aga mitte. Laevade
+					paigutamine mänguväljakule toimub hiirekursori abil Mänguväljakule
+					paigutatud laevad ei tohi omavahel ei küljetsi ega nurgiti kokku
+					puutuda Kõik laevad on sirge kujuga, "tetrise" kujulisi laevu
+					mängus ei eksisteeri Juba asetatud laevu peab saama mänguväljakul
+					ringi paigutada, seni kuni mängija ei ole valikut lõplikult
+					kinnitanud Peab eksisteerima võimalus kinnitada oma laevastiku
+					lõplik paigutus mänguväljakul mängu alustamiseks Mäng algab hetkel
+					kui mõlemad mängijad on oma laevastiku väljakule pai Mängus osaleb
+					kaks mängijat. Mängijad liituvad mängu läbi nn. lobby, kus on näha
+					kõiki käimasolevaid mänge, võimalus uut mängu luua või liituda mõne
+					olemasoleva mänguga, kus osalemas täpselt üks mängija. Mängu
+					eesmärgiks on võita vastasmängijat, uputades pommitamisega kõik
+					vastasmängija laevad. Kummalgi mängijal on oma 10x10 mänguväli.
+					Enne mängu alustamist paigutab kumbki mängija oma mänguväljale oma
+					laevastiku, kuhu kuuluvad: Üks nelja ruudu pikkune laev Kaks kolme
+					ruudu pikkust laeva Kolm kahe ruudu pikkust laeva Neli ühe ruudu
+					pikkust laeva Vastasmängija mänguväli on mängijale nähtav, sellele
+					paigutatud laevastik enne mängu alustamist aga mitte. Laevade
+					paigutamine mänguväljakule toimub hiirekursori abil Mänguväljakule
+					paigutatud laevad ei tohi omavahel ei küljetsi ega nurgiti kokku
+					puutuda Kõik laevad on sirge kujuga, "tetrise" kujulisi laevu
+					mängus ei eksisteeri Juba asetatud laevu peab saama mänguväljakul
+					ringi paigutada, seni kuni mängija ei ole valikut lõplikult
+					kinnitanud Peab eksisteerima võimalus kinnitada oma laevastiku
+					lõplik paigutus mänguväljakul mängu alustamiseks Mäng algab hetkel
+					kui mõlemad mängijad on oma laevastiku väljakule pai Mängus osaleb
+					kaks mängijat. Mängijad liituvad mängu läbi nn. lobby, kus on näha
+					kõiki käimasolevaid mänge, võimalus uut mängu luua või liituda mõne
+					olemasoleva mänguga, kus osalemas täpselt üks mängija. Mängu
+					eesmärgiks on võita vastasmängijat, uputades pommitamisega kõik
+					vastasmängija laevad. Kummalgi mängijal on oma 10x10 mänguväli.
+					Enne mängu alustamist paigutab kumbki mängija oma mänguväljale oma
+					laevastiku, kuhu kuuluvad: Üks nelja ruudu pikkune laev Kaks kolme
+					ruudu pikkust laeva Kolm kahe ruudu pikkust laeva Neli ühe ruudu
+					pikkust laeva Vastasmängija mänguväli on mängijale nähtav, sellele
+					paigutatud laevastik enne mängu alustamist aga mitte. Laevade
+					paigutamine mänguväljakule toimub hiirekursori abil Mänguväljakule
+					paigutatud laevad ei tohi omavahel ei küljetsi ega nurgiti kokku
+					puutuda Kõik laevad on sirge kujuga, "tetrise" kujulisi laevu
+					mängus ei eksisteeri Juba asetatud laevu peab saama mänguväljakul
+					ringi paigutada, seni kuni mängija ei ole valikut lõplikult
+					kinnitanud Peab eksisteerima võimalus kinnitada oma laevastiku
+					lõplik paigutus mänguväljakul mängu alustamiseks Mäng algab hetkel
+					kui mõlemad mängijad on oma laevastiku väljakule pai</div>
+				<div class="closeButtonContainer">
+					<a href="javascript:toggleHelp()">
+						<div class="button">Close</div>
+					</a>
 				</div>
-				<div id="rankings">
-					<div class="popupText">
-						<table>
-							<tr>
-								<th>Name</th><th>Played Games</th><th>Win %</th><th>Rating</th>
-							</tr>
-							<tr><td>Mina Siin</td><td>50</td><td>48%</td><td>500</td></tr>
-							<tr><td>Mina Siin</td><td>50</td><td>48%</td><td>500</td></tr>
-							<tr><td>Mina Siin</td><td>50</td><td>48%</td><td>500</td></tr>
-							<tr><td>Mina Siin</td><td>50</td><td>48%</td><td>500</td></tr>
-							<tr><td>Mina Siin</td><td>50</td><td>48%</td><td>500</td></tr>
-							<tr><td>Mina Siin</td><td>50</td><td>48%</td><td>500</td></tr>
-							<tr><td>Mina Siin</td><td>50</td><td>48%</td><td>500</td></tr>
-							<tr><td>Mina Siin</td><td>50</td><td>48%</td><td>500</td></tr>
-							<tr><td>Mina Siin</td><td>50</td><td>48%</td><td>500</td></tr>
-							
-							<tr><td>Mina Siin</td><td>50</td><td>48%</td><td>500</td></tr>
-							<tr><td>Mina Siin</td><td>50</td><td>48%</td><td>500</td></tr>
-							<tr><td>Mina Siin</td><td>50</td><td>48%</td><td>500</td></tr>
-							<tr><td>Mina Siin</td><td>50</td><td>48%</td><td>500</td></tr>
-							<tr><td>Mina Siin</td><td>50</td><td>48%</td><td>500</td></tr>
-							<tr><td>Mina Siin</td><td>50</td><td>48%</td><td>500</td></tr>
-							
-						</table>
-					</div>
-					<div class="closeButtonContainer">
-						<a href="javascript:toggleRankings()">
-							<div class="button">
-								Close
-							</div>
-						</a>
-					</div>
+			</div>
+			<div id="rankings">
+				<div class="popupText">
+					<table>
+						<tr>
+							<th>Name</th>
+							<th>Played Games</th>
+							<th>Win %</th>
+							<th>Rating</th>
+						</tr>
+						<tr>
+							<td>Mina Siin</td>
+							<td>50</td>
+							<td>48%</td>
+							<td>500</td>
+						</tr>
+						<tr>
+							<td>Mina Siin</td>
+							<td>50</td>
+							<td>48%</td>
+							<td>500</td>
+						</tr>
+						<tr>
+							<td>Mina Siin</td>
+							<td>50</td>
+							<td>48%</td>
+							<td>500</td>
+						</tr>
+						<tr>
+							<td>Mina Siin</td>
+							<td>50</td>
+							<td>48%</td>
+							<td>500</td>
+						</tr>
+						<tr>
+							<td>Mina Siin</td>
+							<td>50</td>
+							<td>48%</td>
+							<td>500</td>
+						</tr>
+						<tr>
+							<td>Mina Siin</td>
+							<td>50</td>
+							<td>48%</td>
+							<td>500</td>
+						</tr>
+						<tr>
+							<td>Mina Siin</td>
+							<td>50</td>
+							<td>48%</td>
+							<td>500</td>
+						</tr>
+						<tr>
+							<td>Mina Siin</td>
+							<td>50</td>
+							<td>48%</td>
+							<td>500</td>
+						</tr>
+						<tr>
+							<td>Mina Siin</td>
+							<td>50</td>
+							<td>48%</td>
+							<td>500</td>
+						</tr>
+
+						<tr>
+							<td>Mina Siin</td>
+							<td>50</td>
+							<td>48%</td>
+							<td>500</td>
+						</tr>
+						<tr>
+							<td>Mina Siin</td>
+							<td>50</td>
+							<td>48%</td>
+							<td>500</td>
+						</tr>
+						<tr>
+							<td>Mina Siin</td>
+							<td>50</td>
+							<td>48%</td>
+							<td>500</td>
+						</tr>
+						<tr>
+							<td>Mina Siin</td>
+							<td>50</td>
+							<td>48%</td>
+							<td>500</td>
+						</tr>
+						<tr>
+							<td>Mina Siin</td>
+							<td>50</td>
+							<td>48%</td>
+							<td>500</td>
+						</tr>
+						<tr>
+							<td>Mina Siin</td>
+							<td>50</td>
+							<td>48%</td>
+							<td>500</td>
+						</tr>
+
+					</table>
 				</div>
-				<div id="history">
-					<div class="popupText">
-						<table>
-							<tr>
-								<th>Id</th><th>Opponent</th><th>Time</th><th>Replay</th>
-							</tr>
-							<tr><td>1</td><td>Mina Seal</td><td>25.02.12-12.05</td><td>Replay</td></tr>
-							<tr><td>2</td><td>Mina Seal</td><td>25.02.12-12.05</td><td>Replay</td></tr>
-							<tr><td>3</td><td>Mina Seal</td><td>25.02.12-12.05</td><td>Replay</td></tr>
-							<tr><td>4</td><td>Mina Seal</td><td>25.02.12-12.05</td><td>Replay</td></tr>
-							<tr><td>5</td><td>Mina Seal</td><td>25.02.12-12.05</td><td>Replay</td></tr>
-							<tr><td>6</td><td>Mina Seal</td><td>25.02.12-12.05</td><td>Replay</td></tr>
-							<tr><td>7</td><td>Mina Seal</td><td>25.02.12-12.05</td><td>Replay</td></tr>
-							<tr><td>8</td><td>Mina Seal</td><td>25.02.12-12.05</td><td>Replay</td></tr>
-							<tr><td>9</td><td>Mina Seal</td><td>25.02.12-12.05</td><td>Replay</td></tr>
-							<tr><td>10</td><td>Mina Seal</td><td>25.02.12-12.05</td><td>Replay</td></tr>
-							<tr><td>11</td><td>Mina Seal</td><td>25.02.12-12.05</td><td>Replay</td></tr>
-							<tr><td>12</td><td>Mina Seal</td><td>25.02.12-12.05</td><td>Replay</td></tr>
-							<tr><td>13</td><td>Mina Seal</td><td>25.02.12-12.05</td><td>Replay</td></tr>							
-						</table>
-					</div>
-					<div class="closeButtonContainer">
-						<a href="javascript:toggleHistory()">
-							<div class="button">
-								Close
-							</div>
-						</a>
-					</div>
+				<div class="closeButtonContainer">
+					<a href="javascript:toggleRankings()">
+						<div class="button">Close</div>
+					</a>
 				</div>
-				<div id="lobby">
-					<div id="users">
-						<h4>Users</h4>
-						User 1 <br />
-						User 1 <br />
-						User 1 <br />
-						User 1 <br />
-						User 1 <br />
-						User 1 <br />
-						User 1 <br />
-						User 1 <br />
-						User 1 <br />
-						User 1 <br />
-						User 1 <br />
-						User 1 <br />
-						User 1 <br />
-						User 1 <br />
-						User 1 <br />
-						User 1 <br />
-						User 1 <br />
-						User 1 <br />
-						User 1 <br />
-						User 1 <br />
-						User 1 <br />
-						User 1 <br />
-						User 1 <br />
-						User 1 <br />
-						User 1 <br />
-						User 1 <br />
-						User 1 <br />
-					</div>
-					<div id="games">
-						<table>
-							<tr>
-								<th>Game Name</th><th>Game Owner</th><th>Join</th>
-							</tr>
-							<tr><td>Mina Siin mäng 1</td><td>Mina Siin</td><td>Join</td></tr>
-							<tr><td>Mina Siin mäng 2</td><td>Mina Siin</td><td>Join</td></tr>
-							<tr><td>Mina Siin mäng 3</td><td>Mina Siin</td><td>Join</td></tr>
-							<tr><td>Mina Siin mäng 4</td><td>Mina Siin</td><td>Join</td></tr>
-							<tr><td>Mina Siin mäng 5</td><td>Mina Siin</td><td>Join</td></tr>
-							<tr><td>Mina Siin mäng 6</td><td>Mina Siin</td><td>Join</td></tr>
-							<tr><td>Mina Siin mäng 7</td><td>Mina Siin</td><td>Join</td></tr>
-							<tr><td>Mina Siin mäng 8</td><td>Mina Siin</td><td>Join</td></tr>
-							<tr><td>Mina Siin mäng 8</td><td>Mina Siin</td><td>Join</td></tr>
-							<tr><td>Mina Siin mäng 8</td><td>Mina Siin</td><td>Join</td></tr>
-							<tr><td>Mina Siin mäng 8</td><td>Mina Siin</td><td>Join</td></tr>
-							<tr><td>Mina Siin mäng 8</td><td>Mina Siin</td><td>Join</td></tr>
-							<tr><td>Mina Siin mäng 8</td><td>Mina Siin</td><td>Join</td></tr>
-							<tr><td>Mina Siin mäng 8</td><td>Mina Siin</td><td>Join</td></tr>
-							<tr><td>Mina Siin mäng 8</td><td>Mina Siin</td><td>Join</td></tr>
-							<tr><td>Mina Siin mäng 8</td><td>Mina Siin</td><td>Join</td></tr>
-							<tr><td>Mina Siin mäng 8</td><td>Mina Siin</td><td>Join</td></tr>
-							<tr><td>Mina Siin mäng 8</td><td>Mina Siin</td><td>Join</td></tr>
-							<tr><td>Mina Siin mäng 8</td><td>Mina Siin</td><td>Join</td></tr>
-							<tr><td>Mina Siin mäng 8</td><td>Mina Siin</td><td>Join</td></tr>
-							<tr><td>Mina Siin mäng 8</td><td>Mina Siin</td><td>Join</td></tr>
-							<tr><td>Mina Siin mäng 8</td><td>Mina Siin</td><td>Join</td></tr>
-							<tr><td>Mina Siin mäng 8</td><td>Mina Siin</td><td>Join</td></tr>
-							
-						</table>
-					</div>
-					<div id="lobbyButtons">
-						<a href="">
-							<div class="button">New Game</div>
-						</a>
-					</div>
+			</div>
+			<div id="history">
+				<div class="popupText">
+					<table>
+						<tr>
+							<th>Id</th>
+							<th>Opponent</th>
+							<th>Time</th>
+							<th>Replay</th>
+						</tr>
+						<tr>
+							<td>1</td>
+							<td>Mina Seal</td>
+							<td>25.02.12-12.05</td>
+							<td>Replay</td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>Mina Seal</td>
+							<td>25.02.12-12.05</td>
+							<td>Replay</td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td>Mina Seal</td>
+							<td>25.02.12-12.05</td>
+							<td>Replay</td>
+						</tr>
+						<tr>
+							<td>4</td>
+							<td>Mina Seal</td>
+							<td>25.02.12-12.05</td>
+							<td>Replay</td>
+						</tr>
+						<tr>
+							<td>5</td>
+							<td>Mina Seal</td>
+							<td>25.02.12-12.05</td>
+							<td>Replay</td>
+						</tr>
+						<tr>
+							<td>6</td>
+							<td>Mina Seal</td>
+							<td>25.02.12-12.05</td>
+							<td>Replay</td>
+						</tr>
+						<tr>
+							<td>7</td>
+							<td>Mina Seal</td>
+							<td>25.02.12-12.05</td>
+							<td>Replay</td>
+						</tr>
+						<tr>
+							<td>8</td>
+							<td>Mina Seal</td>
+							<td>25.02.12-12.05</td>
+							<td>Replay</td>
+						</tr>
+						<tr>
+							<td>9</td>
+							<td>Mina Seal</td>
+							<td>25.02.12-12.05</td>
+							<td>Replay</td>
+						</tr>
+						<tr>
+							<td>10</td>
+							<td>Mina Seal</td>
+							<td>25.02.12-12.05</td>
+							<td>Replay</td>
+						</tr>
+						<tr>
+							<td>11</td>
+							<td>Mina Seal</td>
+							<td>25.02.12-12.05</td>
+							<td>Replay</td>
+						</tr>
+						<tr>
+							<td>12</td>
+							<td>Mina Seal</td>
+							<td>25.02.12-12.05</td>
+							<td>Replay</td>
+						</tr>
+						<tr>
+							<td>13</td>
+							<td>Mina Seal</td>
+							<td>25.02.12-12.05</td>
+							<td>Replay</td>
+						</tr>
+					</table>
 				</div>
-			</div>			
+				<div class="closeButtonContainer">
+					<a href="javascript:toggleHistory()">
+						<div class="button">Close</div>
+					</a>
+				</div>
+			</div>
+			<div id="lobby">
+				<div id="users">
+					<h4>Users</h4>
+					User 1 <br /> User 1 <br /> User 1 <br /> User 1 <br /> User 1
+					<br /> User 1 <br /> User 1 <br /> User 1 <br /> User 1 <br />
+					User 1 <br /> User 1 <br /> User 1 <br /> User 1 <br /> User 1
+					<br /> User 1 <br /> User 1 <br /> User 1 <br /> User 1 <br />
+					User 1 <br /> User 1 <br /> User 1 <br /> User 1 <br /> User 1
+					<br /> User 1 <br /> User 1 <br /> User 1 <br /> User 1 <br />
+				</div>
+				<div id="games">
+					<table>
+						<tr>
+							<th>Game Name</th>
+							<th>Game Owner</th>
+							<th>Join</th>
+						</tr>
+						<tr>
+							<td>Mina Siin mäng 1</td>
+							<td>Mina Siin</td>
+							<td>Join</td>
+						</tr>
+						<tr>
+							<td>Mina Siin mäng 2</td>
+							<td>Mina Siin</td>
+							<td>Join</td>
+						</tr>
+						<tr>
+							<td>Mina Siin mäng 3</td>
+							<td>Mina Siin</td>
+							<td>Join</td>
+						</tr>
+						<tr>
+							<td>Mina Siin mäng 4</td>
+							<td>Mina Siin</td>
+							<td>Join</td>
+						</tr>
+						<tr>
+							<td>Mina Siin mäng 5</td>
+							<td>Mina Siin</td>
+							<td>Join</td>
+						</tr>
+						<tr>
+							<td>Mina Siin mäng 6</td>
+							<td>Mina Siin</td>
+							<td>Join</td>
+						</tr>
+						<tr>
+							<td>Mina Siin mäng 7</td>
+							<td>Mina Siin</td>
+							<td>Join</td>
+						</tr>
+						<tr>
+							<td>Mina Siin mäng 8</td>
+							<td>Mina Siin</td>
+							<td>Join</td>
+						</tr>
+						<tr>
+							<td>Mina Siin mäng 8</td>
+							<td>Mina Siin</td>
+							<td>Join</td>
+						</tr>
+						<tr>
+							<td>Mina Siin mäng 8</td>
+							<td>Mina Siin</td>
+							<td>Join</td>
+						</tr>
+						<tr>
+							<td>Mina Siin mäng 8</td>
+							<td>Mina Siin</td>
+							<td>Join</td>
+						</tr>
+						<tr>
+							<td>Mina Siin mäng 8</td>
+							<td>Mina Siin</td>
+							<td>Join</td>
+						</tr>
+						<tr>
+							<td>Mina Siin mäng 8</td>
+							<td>Mina Siin</td>
+							<td>Join</td>
+						</tr>
+						<tr>
+							<td>Mina Siin mäng 8</td>
+							<td>Mina Siin</td>
+							<td>Join</td>
+						</tr>
+						<tr>
+							<td>Mina Siin mäng 8</td>
+							<td>Mina Siin</td>
+							<td>Join</td>
+						</tr>
+						<tr>
+							<td>Mina Siin mäng 8</td>
+							<td>Mina Siin</td>
+							<td>Join</td>
+						</tr>
+						<tr>
+							<td>Mina Siin mäng 8</td>
+							<td>Mina Siin</td>
+							<td>Join</td>
+						</tr>
+						<tr>
+							<td>Mina Siin mäng 8</td>
+							<td>Mina Siin</td>
+							<td>Join</td>
+						</tr>
+						<tr>
+							<td>Mina Siin mäng 8</td>
+							<td>Mina Siin</td>
+							<td>Join</td>
+						</tr>
+						<tr>
+							<td>Mina Siin mäng 8</td>
+							<td>Mina Siin</td>
+							<td>Join</td>
+						</tr>
+						<tr>
+							<td>Mina Siin mäng 8</td>
+							<td>Mina Siin</td>
+							<td>Join</td>
+						</tr>
+						<tr>
+							<td>Mina Siin mäng 8</td>
+							<td>Mina Siin</td>
+							<td>Join</td>
+						</tr>
+						<tr>
+							<td>Mina Siin mäng 8</td>
+							<td>Mina Siin</td>
+							<td>Join</td>
+						</tr>
+
+					</table>
+				</div>
+				<div id="lobbyButtons">
+					<a href="">
+						<div class="button">New Game</div>
+					</a>
+				</div>
+			</div>
 		</div>
-	</body>
+	</div>
+</body>
 
 </html>
