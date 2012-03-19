@@ -8,4 +8,16 @@ $(document).ready(function() {
 			confirmShipPlacement(true);
 		}
 	});
+	if (server.ready()==true){
+		writeBox"Sinu kord");
+		$("#oppField of").click(function(event){
+			of = event.target;
+			if (of.cellIndex!=0 & of.parentElement.rowIndex!=0){ //if correct square is clicked
+				server.registerShot(new Array([td.parentElement.rowIndex - 1],[td.cellIndex - 1]));
+			}
+		if (server.isGameOver()==1){
+			writeChat("Sinu Võit");
+		}
+		} 
+	}
 });
