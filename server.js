@@ -35,18 +35,57 @@ function generateRandomEnemyResponse() {//serverless help function
 	return new Array(x, y);
 }
 
+
 function drawShips(ships) {
-	for (i=0;i<=9;i++) {
+	var i, j, coords;
+	
+	for (i=0;i<10;i++) {
+		for (j=0;j<10;j++) {
+			$("#playField tbody tr:eq(" + (i + 1) + ") td:eq(" + (j + 1) + ")").removeClass();
+		}
+	}
+	
+	for (i=0;i<ships.length;i++) {
+		coords = ships[i].getCoordinates();
+		if (ships[i].orientation == 0) {
+			$("#playField tbody tr:eq(" + (coords[0][0] + 1) + ") td:eq(" + (coords[0][1] + 1) + ")").addClass("shipOneShip");
+		}
+		if (ships[i].orientation == 1) {
+			var len = coords.length;
+			$("#playField tbody tr:eq(" + (coords[0][0] + 1) + ") td:eq(" + (coords[0][1] + 1) + ")").addClass("shipNoseEW");
+			for (j=1;j<(len - 1);j++) {
+				$("#playField tbody tr:eq(" + (coords[j][0] + 1) + ") td:eq(" + (coords[j][1] + 1) + ")").addClass("shipMidEW");
+			}
+			$("#playField tbody tr:eq(" + (coords[len - 1][0] + 1) + ") td:eq(" + (coords[len - 1][1] + 1) + ")").addClass("shipTailEW");
+		}
+		if (ships[i].orientation == 2) {
+			var len = coords.length;
+			$("#playField tbody tr:eq(" + (coords[0][0] + 1) + ") td:eq(" + (coords[0][1] + 1) + ")").addClass("shipNoseNS");
+			for (j=1;j<(len - 1);j++) {
+				$("#playField tbody tr:eq(" + (coords[j][0] + 1) + ") td:eq(" + (coords[j][1] + 1) + ")").addClass("shipMidNS");
+			}
+			$("#playField tbody tr:eq(" + (coords[len - 1][0] + 1) + ") td:eq(" + (coords[len - 1][1] + 1) + ")").addClass("shipTailNS");
+		}
 		
 	}
-	//$("#playField tbody tr:eq(" + (i + 1) + ") td:eq(" + (j + 1) + ")").css("background-color", "#000000");
 }
 
-function validateField() {
-	
+function validateShips(field) {
+	var i, j;
+	for (i=0;i<=8;i++) {
+		for (j=0;j<=8;j++) {
+			if (field[i][j] == 1 && (field[i+1][j] == 1 && field[i][j+1] == 1 || 
+					field[i+1][j+1] == 1 || (j>0 && i>0 && field[i-1][j+1] == 1))){
+				return false;
+				break;
+				}
+		}
+	}
+	return true;
 }
 
-function generateShips(partial, field) {
+
+function generateShips(field) {
 	var i, j;
 	var checked = generateEmptyField();
 	var ships = new Array();
@@ -99,7 +138,12 @@ function Server() {
 }
 
 function registerShot(shot) {	//returns true if enemy ship was hit
-	
+	if(this.oppField[shot[0], shot[1]] == 1) {
+		this.oppField[shot[0], shot[1]] = 2;
+		return true;		
+	}
+	this.oppField[shot[0], shot[1]] = 3;
+	return false;
 } 	
 
 function getEnemyResponse() { 	//returns enemy shot
@@ -107,14 +151,17 @@ function getEnemyResponse() { 	//returns enemy shot
 }	
 
 function confirmShips() {		//returns true if ship placement is correct
-	var ships = generateShips(true, this.oppField);
-	drawShips(ships);
+	if (!validateShips(this.ownField)) {
+		return false;
+	}
+	drawShips(generateShips(this.ownField));
+	return true;
 }		
 
 function isGameOver() {			//returns false if not, otherwise the winner 0,1,2
-	
+	return false;
 }
 
 function ready() {
-	
+	return true;
 }
