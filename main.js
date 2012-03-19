@@ -42,6 +42,9 @@ $(document).ready(function() {
 				else if (shot == 1) {
 					writeToChat("Shot hit, new turn");
 				}
+				else if (shot == 3) {
+					writeToChat("Ship sunk, new shot!");
+				}
 				else {
 					writeToChat("Square already shot, try again.");
 				}
