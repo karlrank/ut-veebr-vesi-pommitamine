@@ -18,6 +18,6 @@ $(document).ready(function() {
 		if (server.isGameOver()==1){
 			writeChat("Sinu Võit");
 		}
-		}
+		} 
 	}
 });
