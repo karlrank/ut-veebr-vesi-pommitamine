@@ -70,6 +70,10 @@ function drawShips(ships) {
 	}
 }
 
+function drawDownedShip(ship) {
+	
+}
+
 function validateShips(field) {
 	var i, j, k;
 	for (i=0;i<=8;i++) {
@@ -115,16 +119,16 @@ function finalizeShips(ships) {
 	var ship3 = 0;
 	var ship4 = 0;
 	for (i=0;i<ships.length;i++) {
-		if (ships[i].lenght == 1) {
+		if (ships[i].length == 1) {
 			ship1++;
 		}
-		if (ships[i].lenght == 2) {
+		if (ships[i].length == 2) {
 			ship2++;
 		}
-		if (ships[i].lenght == 3) {
+		if (ships[i].length == 3) {
 			ship3++;
 		}
-		if (ships[i].lenght == 4) {
+		if (ships[i].length == 4) {
 			ship4++;
 		}
 	}
@@ -180,6 +184,7 @@ function Server() {
 	this.ownField = generateEmptyField(); //temp field, will be in server later
 	this.oppField = generateEnemyField(); //temp field, will be in server later
 	this.enemyShips = generateShips(this.oppField); //temp field, will be in server later
+	this.ownShips = generateShips(this.ownField); //temp field, will be in server later
 	this.registerShot = registerShot;
 	this.getEnemyResponse = getEnemyResponse;
 	this.confirmShips = confirmShips;
@@ -190,11 +195,22 @@ function Server() {
 function registerShot(shot) {	//returns true if enemy ship was hit
 	if(this.oppField[shot[0]][shot[1]] == 1) {
 		this.oppField[shot[0]][shot[1]] = 2;
-		var i;
-		console.log(this.enemyShips.lenght);
-		for (i=0;i<this.enemyShips.lenght;i++) {
-			console.log("tere")
+		var i, j;
+		for (i=0;i<this.enemyShips.length;i++) {
+			var down = true;
+			
+			for (j=0;j<this.enemyShips[i].length;j++) {
+				if (this.oppField[this.enemyShips[i].getCoordinates()[j][0]][this.enemyShips[i].getCoordinates()[j][1]] == 1) {
+					down = false;
+				}
+			}
+			if (down) {
+				drawDownedShip(this.enemyShips[i]);
+				this.enemyShips.splice(i, 1);
+				return 3;
+			}
 		}
+		$("#oppField tbody tr:eq(" + (shot[0] + 1) + ") td:eq(" + (shot[1] + 1) + ")").addClass("explosion");
 		return 1;		
 	}
 	else if(this.oppField[shot[0]][shot[1]] == 3 || this.oppField[shot[0]][shot[1]] == 2) {
@@ -202,6 +218,9 @@ function registerShot(shot) {	//returns true if enemy ship was hit
 	}
 	else {
 		this.oppField[shot[0]][shot[1]] = 3;
+		$("#oppField tbody tr:eq(" + (shot[0] + 1) + ") td:eq(" + (shot[1] + 1) + ")").addClass("ripple");
+		var enemyShot = generateRandomEnemyResponse();
+		$("#playField tbody tr:eq(" + (enemyShot[0] + 1) + ") td:eq(" + (enemyShot[1] + 1) + ")").addClass("ripple_s");
 		return 0;
 	}	
 }

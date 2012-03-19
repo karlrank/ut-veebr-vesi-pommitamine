@@ -25,3 +25,14 @@
 .shipTailNS {
 	background-image: url('img/ships/TailNS.png');
 }
+
+.explosion {
+	background-image: url('img/explosion_big.png');
+}
+
+.ripple {
+	background-image: url('img/Ripple30px.png');
+}
+.ripple_s {
+	background-image: url('img/Ripple20px.png');
+}
