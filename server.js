@@ -71,19 +71,68 @@ function drawShips(ships) {
 }
 
 function validateShips(field) {
-	var i, j;
+	var i, j, k;
 	for (i=0;i<=8;i++) {
 		for (j=0;j<=8;j++) {
+			var num = 0;
+			var oth = 0;
 			if (field[i][j] == 1 && (field[i+1][j] == 1 && field[i][j+1] == 1 || 
 					field[i+1][j+1] == 1 || (j>0 && i>0 && field[i-1][j+1] == 1))){
 				return false;
 				break;
 				}
+			for (k=0;k<10-i;k++){
+				if (field[i+k][j]==1){
+					num++;
+					if (num>4){
+						return false;
+					}
+				}
+				else{
+					break;
+				}
+			}
+			for (k=0;k<10-j;k++){
+				if (field[i][j+k]==1){
+					oth++;
+					if (oth>4){
+						return false;
+					}
+				}
+				else{
+					break;
+				}
+			}
 		}
 	}
 	return true;
 }
 
+function finalizeShips(ships) {
+	var i;
+	var ship1 = 0;
+	var ship2 = 0;
+	var ship3 = 0;
+	var ship4 = 0;
+	for (i=0;i<ships.length;i++) {
+		if (ships[i].lenght == 1) {
+			ship1++;
+		}
+		if (ships[i].lenght == 2) {
+			ship2++;
+		}
+		if (ships[i].lenght == 3) {
+			ship3++;
+		}
+		if (ships[i].lenght == 4) {
+			ship4++;
+		}
+	}
+	if (ship1 == 4 && ship2 == 3 && ship3 == 2 && ship4 == 1) {
+		return true;
+	}
+	return false;
+}
 
 function generateShips(field) {
 	var i, j;
@@ -130,6 +179,7 @@ function generateShips(field) {
 function Server() {
 	this.ownField = generateEmptyField(); //temp field, will be in server later
 	this.oppField = generateEnemyField(); //temp field, will be in server later
+	this.enemyShips = generateShips(this.oppField); //temp field, will be in server later
 	this.registerShot = registerShot;
 	this.getEnemyResponse = getEnemyResponse;
 	this.confirmShips = confirmShips;
@@ -138,13 +188,23 @@ function Server() {
 }
 
 function registerShot(shot) {	//returns true if enemy ship was hit
-	if(this.oppField[shot[0], shot[1]] == 1) {
-		this.oppField[shot[0], shot[1]] = 2;
-		return true;		
+	if(this.oppField[shot[0]][shot[1]] == 1) {
+		this.oppField[shot[0]][shot[1]] = 2;
+		var i;
+		console.log(this.enemyShips.lenght);
+		for (i=0;i<this.enemyShips.lenght;i++) {
+			console.log("tere")
+		}
+		return 1;		
 	}
-	this.oppField[shot[0], shot[1]] = 3;
-	return false;
-} 	
+	else if(this.oppField[shot[0]][shot[1]] == 3 || this.oppField[shot[0]][shot[1]] == 2) {
+		return 2;		
+	}
+	else {
+		this.oppField[shot[0]][shot[1]] = 3;
+		return 0;
+	}	
+}
 
 function getEnemyResponse() { 	//returns enemy shot
 	return generateRandomEnemyResponse();

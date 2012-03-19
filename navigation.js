@@ -27,6 +27,7 @@ function showPlayField() {
 	$("#playField").show();
 	$("#oppField").show();
 	$("#chatBox").show();
+	$("#confirmButton").show();
 }
 
 function clean() {
@@ -36,6 +37,7 @@ function clean() {
 	$("#playField").hide();
 	$("#oppField").hide();
 	$("chatBox").hide();
+	$("#confirmButton").hide();
 }
 
 function exitGame() {

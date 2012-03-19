@@ -22,7 +22,7 @@
 				</a>
 				<a href="javascript:showPlayField()">
 					<div class="button">
-						Playfield(test)
+						Play
 					</div>
 				</a>
 				<a href="javascript:exitGame()" id="lobbyButton">
@@ -48,12 +48,16 @@
 			</div>
 			<div id="content">
 				<div id="chatBox">
+					<div id="chatField">
+					</div>
+					<!--
 					<div id="formContainer">
 						<form action="GET">
 							<input id="chatField" type="text" name="text">
 							<input type='submit' name='Submit' value='Submit' />
 						</form>
 					</div>
+					-->
 				</div>
 			<div id="playField">
 				<table>
@@ -176,6 +180,13 @@
 						</tr>
 					</tbody>
 				</table>
+			</div>
+			<div id="confirmButton">
+				<a href="javascript:clickConfirm()">
+					<div class="button">
+						Confirm
+					</div>
+				</a>
 			</div>
 			<div id="help">
 					<div class="popupText">
