@@ -17,7 +17,7 @@ $(document).ready(function() {
 		td = event.target;
 		if (td.cellIndex!=0 & td.parentElement.rowIndex!=0){ //if correct square is clicked
 			server.ownField[td.parentElement.rowIndex - 1][td.cellIndex - 1] = 1;
-			server.confirmShipsPartial()
+			confirmShipPlacement(true);
 		}
 	});
 });
