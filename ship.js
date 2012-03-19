@@ -9,7 +9,7 @@ function Ship(coordinates) {
 	else if (this.coordinates[0][1] == this.coordinates[1][1]) {
 		this.orientation = 2; //vertical
 	}
-	
+	this.lenght = coordinates.length;
 	this.getCoordinates = getCoordinates;
 }
 

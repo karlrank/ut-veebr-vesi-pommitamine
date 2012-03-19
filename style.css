@@ -37,6 +37,13 @@ table {
         background-image: url('img/play_field.png');
 }
 
+#confirmButton {
+	display: none;
+    position:absolute;
+	top: 233px;
+	left: 70px;
+}
+
 #oppField table {
 	height:330px;
 	width: 330px;
@@ -244,4 +251,11 @@ a {
 
 #lobbyButton {
 	display: none;
+}
+
+#chatField {
+	height: 200px;
+	text-align: left;
+	font-size: 0.75em;
+	overflow: scroll;
 }
