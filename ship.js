@@ -1,4 +1,4 @@
-function Ship(coordinates) {
+function Ship(coordinates) { //class that represents a ship on the playfield
 	this.coordinates = coordinates;
 	if (this.coordinates.length == 1) {
 		this.orientation = 0; //one square ship, orientation irrelavent

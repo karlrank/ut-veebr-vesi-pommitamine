@@ -19,6 +19,7 @@ function toggleHistory() {
 }
 
 function showPlayField() {
+	writeToChat("Place your ships to begin!");
 	$("#lobbyButton").show();
 	$("#help").hide();
 	$("#rankings").hide();

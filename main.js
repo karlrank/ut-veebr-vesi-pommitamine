@@ -1,10 +1,4 @@
-function writeToChat(text) {
-	$("#chatField").append(">" + text + "<br />");
-	$("#chatField")
-			.scrollTop(document.getElementById("chatField").scrollHeight)
-}
-
-function clickConfirm() {
+function clickConfirm() { //main game logic that takes place after the ship have been placed
 	if (finalizeShips(generateShips(server.ownField))) {
 		writeToChat("Game is on!");
 		$("#confirmButton").hide();
@@ -53,7 +47,7 @@ $(document)
 				function() {
 					server = new Server(); // initialize server object
 
-					$("#playField td")
+					$("#playField td") //initialize the ship placement
 							.click(
 									function(event) {
 										td = event.target;
