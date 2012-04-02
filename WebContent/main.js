@@ -42,9 +42,30 @@ function clickConfirm() { //main game logic that takes place after the ship have
 	}
 }
 
+function clickNewGame() {
+	var gameName = prompt("Game name Get!", "");
+	if (name != null) {
+		$.post("addGame", {name:gameName, user:getCookie("name")});
+	}
+	$("#users").load("getPeople");
+	$("#games").load("getLobby");
+	showPlayField();
+	writeToChat("Waiting for opponent");
+}
+
 $(document)
 		.ready(
 				function() {
+					if (getCookie("name") == undefined) {
+						var name = prompt("Name Get!", "");
+						if (name != null) {
+							$.post("add", {name:name});
+							
+						}
+					}
+					
+					$("#users").load("getPeople");
+					$("#games").load("getLobby");
 					server = new Server(); // initialize server object
 
 					$("#playField td") //initialize the ship placement
