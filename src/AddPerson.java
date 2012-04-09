@@ -23,5 +23,6 @@ public class AddPerson extends BaseServlet {
 		Cookie nameCookie = new Cookie("name", name);
 		nameCookie.setMaxAge(-1);
 		resp.addCookie(nameCookie);
+		
 	}
 }

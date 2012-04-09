@@ -29,6 +29,7 @@ public class PostField extends BaseServlet {
 		else {
 			person.getGame().setOppField(field);
 		}
+		System.out.println(person.getGame());
 		
 	}
 }

@@ -11,11 +11,23 @@ public class GetPeople extends BaseServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) 
 			throws ServletException, IOException {
+		System.out.println("123");
+		
+		try {
+			Thread.sleep(0);
+		}
+		catch (Exception e) {
+			System.out.println(e);
+		}
 		
 		PrintWriter writer = resp.getWriter();
 		HttpSession session = req.getSession();
 		Person person = (Person) session.getAttribute("person");
-		writer.println("<h4>Users</h4>");		
+		writer.println("<h4>Users</h4>");	
+		
+		if (person == null) {
+			return; 
+		}
 		
 		for (int i = 0; i < people.size(); i++) {
 			
