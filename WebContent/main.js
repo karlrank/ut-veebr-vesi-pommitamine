@@ -49,10 +49,16 @@ function clickNewGame() {
 	if (name != null) {
 		$.post("addGame", {name:gameName, user:getCookie("name")});
 	}
-	$("#users").load("getPeople");
 	$("#games").load("getLobby");
 	showPlayField();
 	writeToChat("Waiting for opponent");
+}
+
+function getNewUsers() {
+	$.get("getPeople", function (msg) {
+		$("#users").html(msg);
+		getNewUsers();
+	});
 }
 
 function joinGame(id) {
@@ -61,18 +67,15 @@ function joinGame(id) {
 	writeToChat("Waiting for opponent");
 }
 
-$(document)
-		.ready(
+$(document).ready(
 				function() {
-					if (getCookie("name") == undefined) {
-						var name = prompt("Insert username", "");
-						if (name != null) {
-							$.post("addPerson", {name:name});
-							
-						}
+					var name = prompt("Insert username", "");
+					if (name != null) {
+						$.post("addPerson", {name:name});
+						
 					}
 					
-					$("#users").load("getPeople");
+					getNewUsers();
 					$("#games").load("getLobby");
 					server = new Server(); // initialize server object
 
