@@ -1,5 +1,7 @@
 function clickConfirm() { //main game logic that takes place after the ship have been placed
 	if (finalizeShips(generateShips(server.ownField))) {
+		$.post("postField", {"wtf":JSON.stringify(server.oppField)});
+		
 		writeToChat("Game is on!");
 		$("#confirmButton").hide();
 		$("#playField td").unbind();
@@ -43,7 +45,7 @@ function clickConfirm() { //main game logic that takes place after the ship have
 }
 
 function clickNewGame() {
-	var gameName = prompt("Game name Get!", "");
+	var gameName = prompt("Insert game name", "");
 	if (name != null) {
 		$.post("addGame", {name:gameName, user:getCookie("name")});
 	}
@@ -53,13 +55,19 @@ function clickNewGame() {
 	writeToChat("Waiting for opponent");
 }
 
+function joinGame(id) {
+	$.post("joinGame", {"id": id});
+	showPlayField();
+	writeToChat("Waiting for opponent");
+}
+
 $(document)
 		.ready(
 				function() {
 					if (getCookie("name") == undefined) {
-						var name = prompt("Name Get!", "");
+						var name = prompt("Insert username", "");
 						if (name != null) {
-							$.post("add", {name:name});
+							$.post("addPerson", {name:name});
 							
 						}
 					}
@@ -96,7 +104,10 @@ function exitGame() {
 }
 
 
-
+window.onbeforeunload = function () {
+	//$.post("die");
+	//alert("tere");
+};
 
 
 

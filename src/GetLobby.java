@@ -18,7 +18,9 @@ public class GetLobby extends BaseServlet {
 		writer.println("<table><tr><th>Game Name</th><th>Game Owner</th><th>Join</th></tr>");
 		
 		for (int i = 0; i < games.size(); i++) {
-			writer.println("<tr><td>" + games.get(i).getName() + "</td><td>" + games.get(i).getOwner().getName() + "</td><td>Join</td></tr>");
+			if (games.get(i).getOpponent() == null) {
+			writer.println("<tr><td>" + games.get(i).getName() + "</td><td>" + games.get(i).getOwner().getName() + "</td><td><a href=\"javascript:joinGame(" + games.get(i).getId() + ")\">Join</a></td></tr>");
+			}
 		}
 		writer.println("</table>");
 	}
