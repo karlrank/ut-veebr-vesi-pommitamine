@@ -1,7 +1,7 @@
 function writeToChat(text) {
 	$("#chatField").append(">" + text + "<br />");
 	$("#chatField")
-			.scrollTop(document.getElementById("chatField").scrollHeight)
+			.scrollTop(document.getElementById("chatField").scrollHeight);
 }
 
 function generateEnemyField() { // serverless help function
@@ -96,8 +96,7 @@ function generateEmptyField() {
 }
 
 function drawDownedShip(ship) {
-	var i, coords;
-	var muut = ship.getCoordinates()[0][0];
+	var i;
 	var coords = ship.getCoordinates();
 	for (i = 0; i < coords.length; i++) {
 		$(
@@ -184,14 +183,14 @@ function drawDownedShip(ship) {
 		}
 
 	}
-	for (t = 0; t < ship.length; t++) {
+	for (var t = 0; t < ship.length; t++) {
 		var muut = ship.getCoordinates()[0][0];
 		$(
 				"#oppField tbody tr:eq(" + (ship.getCoordinates()[t][0] + 1)
 						+ ") td:eq(" + (ship.getCoordinates()[t][1] + 1) + ")")
 				.addClass("explosion");
 		if (ship.orientation == 2) {
-			for (k = 0; k < ship.length + 2; k++) {
+			for (var k = 0; k < ship.length + 2; k++) {
 				console.log(t);
 				if (t + 1 == ship.length) {
 					if (ship.getCoordinates()[t][0] != 11) {
