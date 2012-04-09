@@ -11,21 +11,15 @@ public class GetPeople extends BaseServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) 
 			throws ServletException, IOException {
-		String name = "";
-		PrintWriter writer = resp.getWriter();
-		writer.println("<h4>Users</h4>");
 		
-		Cookie[] cookies = req.getCookies();//Determine the name of the user
-		if (cookies != null) {
-			for (int i = 0; i < cookies.length; i++) {
-				if ("name".equals(cookies[i].getName())) {
-					name = cookies[i].getValue();
-				}
-			}
-		}
+		PrintWriter writer = resp.getWriter();
+		HttpSession session = req.getSession();
+		Person person = (Person) session.getAttribute("person");
+		writer.println("<h4>Users</h4>");		
 		
 		for (int i = 0; i < people.size(); i++) {
-			if (name.equals(people.get(i).getName()) ) {
+			
+			if (people.get(i).getId() == person.getId()) { 
 				writer.println("<span class=\"logged\">" + people.get(i).getName() + "</span><br />");
 			}
 			else {
