@@ -32,18 +32,13 @@ function showPlayField() {
 }
 
 function clean() {
+	$("#lobbyButton").hide();
 	$("#help").hide();
 	$("#rankings").hide();
-	$("#lobby").hide();
 	$("#playField").hide();
 	$("#oppField").hide();
-	$("chatBox").hide();
-	$("#confirmButton").hide();
-}
-
-function exitGame() {
-	clean();
-	$("#lobby").show();
-	$("#lobbyButton").hide();
 	$("#chatBox").hide();
+	$("#confirmButton").hide();
+	$("#chatBox").hide();
+	$("#lobby").show();
 }

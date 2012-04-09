@@ -16,9 +16,11 @@ public class GetPeople extends BaseServlet {
 		writer.println("<h4>Users</h4>");
 		
 		Cookie[] cookies = req.getCookies();//Determine the name of the user
-		for (int i = 0; i < cookies.length; i++) {
-			if ("name".equals(cookies[i].getName())) {
-				name = cookies[i].getValue();
+		if (cookies != null) {
+			for (int i = 0; i < cookies.length; i++) {
+				if ("name".equals(cookies[i].getName())) {
+					name = cookies[i].getValue();
+				}
 			}
 		}
 		
