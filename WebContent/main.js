@@ -82,5 +82,22 @@ $(document)
 												writeToChat("Illegal ship placement!");
 											}
 										}
-									})
+									});
 				});
+
+function exitGame() {
+	var leave = confirm("Do you really want to leave the game? Doing so means you lose!");
+	if(leave) {
+		clean();
+	}
+	$.post("gameFinished");
+	$("#users").load("getPeople");
+	$("#games").load("getLobby"); 
+}
+
+
+
+
+
+
+
