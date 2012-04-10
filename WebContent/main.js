@@ -1,65 +1,106 @@
+function getShot() {
+	$.get("oppHit", function (msg) {
+		var ar = JSON.parse(msg);
+		$(
+				"#playField tbody tr:eq(" + (ar[0] + 1) + ") td:eq("
+						+ (ar[1] + 1) + ")").addClass("explosion_s");
+		getShot();
+	});
+}
+
 function clickConfirm() { //main game logic that takes place after the ship have been placed
 	if (finalizeShips(generateShips(server.ownField))) {
-		$.post("postField", {"wtf":JSON.stringify(server.oppField)});
+		$.post("postField", {"field":JSON.stringify(server.ownField)});
+		getShot();
 		
 		writeToChat("Game is on!");
 		$("#confirmButton").hide();
 		$("#playField td").unbind();
 		$("#oppField td").click(
 				function(event) {
-					td = event.target;
-					if (td.cellIndex != 0 & td.parentElement.rowIndex != 0) { // if
-																				// correct
-																				// square
-																				// is
-																				// clicked
-						if (server.ready()) {
-							var shot = server.registerShot(new Array(
-									(td.parentElement.rowIndex - 1),
-									(td.cellIndex - 1)));
-							if (shot == 0) {
-								writeToChat("Shot didn't hit");
-							} else if (shot == 1) {
-								writeToChat("Shot hit, new turn");
-							} else if (shot == 3) {
-								writeToChat("Ship sunk, new shot!");
-							} else {
-								writeToChat("Square already shot, try again.");
+					var td = event.target;
+					if (td.cellIndex != 0 & td.parentElement.rowIndex != 0) { 
+						$.get("ready", function (msg) {
+							if (msg == "1") {
+								var shot = new Array((td.parentElement.rowIndex - 1), (td.cellIndex - 1));
+								$.post("game", {"coords" : JSON.stringify(shot)}, function (msg) {
+									if (msg == "0") {
+										$(
+												"#oppField tbody tr:eq(" + (shot[0] + 1) + ") td:eq("
+														+ (shot[1] + 1) + ")").addClass("ripple");
+										writeToChat("Shot didn't hit");
+										
+									}
+									else if (msg == "1") {
+										$(
+												"#oppField tbody tr:eq(" + (shot[0] + 1) + ") td:eq("
+														+ (shot[1] + 1) + ")").addClass("explosion");
+										writeToChat("Shot hit, new turn");
+									}
+									else if (msg == "2") {										
+										writeToChat("Square already shot, try again.");
+									}
+									else {
+										var ship = JSON.parse(msg);
+										var ship = new Ship(ship);
+										drawDownedShip(ship);
+										writeToChat("Ship sunk, new shot!");
+									}
+								});
 							}
-						} else {
-							writeToChat("Not your turn");
-						}
+							else {
+								writeToChat("Not your turn");
+							}
+							
+						});
+						
 					}
-					if (server.isGameOver() == 1) {
-						alert("You Won!");
-						$("#oppField td").unbind();
-					}
-					if (server.isGameOver() == 2) {
-						writeToChat("You lost!");
-						$("#oppField td").unbind();
-					}
+					
+					 $.get("gameOver", function(msg) {
+						 	if (msg == "1") {
+						 		alert("You Won!");
+								$("#oppField td").unbind();
+							}
+							else if (msg == "2"){
+								writeToChat("You lost!");
+								$("#oppField td").unbind();
+							}
+					 });
 				});
 	} else {
 		writeToChat("Ships not placed correctly");
 	}
 }
 
+
 function clickNewGame() {
 	var gameName = prompt("Insert game name", "");
 	if (name != null) {
 		$.post("addGame", {name:gameName, user:getCookie("name")});
 	}
-	$("#games").load("getLobby");
 	showPlayField();
 	writeToChat("Waiting for opponent");
 }
 
 function getNewUsers() {
-	$.get("getPeople", function (msg) {
+	setTimeout("$(\"#users\").load(\"usersTemp\");getNewUsers();", 1000);
+	/*
+	console.log("gnu kutsutud");
+	$.get("usersTemp", function (msg) {
 		$("#users").html(msg);
-		getNewUsers();
-	});
+		
+	});*/
 }
+
+function getNewLobby() {
+	setTimeout("$(\"#games\").load(\"lobbyTemp\");getNewLobby();", 1000);
+}
+	/*
+	$.get("lobbyTemp", function (msg) {
+		$("#games").html(msg);
+		setTimeout("getNewLobby()", 1000);
+	});*/
+
 
 function joinGame(id) {
 	$.post("joinGame", {"id": id});
@@ -74,9 +115,9 @@ $(document).ready(
 						$.post("addPerson", {name:name});
 						
 					}
-					
 					getNewUsers();
-					$("#games").load("getLobby");
+					getNewLobby();
+					
 					server = new Server(); // initialize server object
 
 					$("#playField td") //initialize the ship placement
@@ -102,8 +143,6 @@ function exitGame() {
 		clean();
 	}
 	$.post("gameFinished");
-	$("#users").load("getPeople");
-	$("#games").load("getLobby"); 
 }
 
 

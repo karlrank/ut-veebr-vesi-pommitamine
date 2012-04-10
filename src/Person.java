@@ -1,3 +1,5 @@
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.BlockingQueue;
 
 public class Person {
 	static int idBase = 0;
@@ -5,7 +7,24 @@ public class Person {
 	private String name;
 	private boolean inGame;
 	private Game game;
-	
+	private BlockingQueue<String> incomingMessages = new ArrayBlockingQueue<String>(10);;
+
+	public BlockingQueue<String> getIncomingMessages() {
+		return incomingMessages;
+	}
+
+	public void setIncomingMessages(BlockingQueue<String> incomingMessages) {
+		this.incomingMessages = incomingMessages;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public void setInGame(boolean inGame) {
+		this.inGame = inGame;
+	}
+
 	public Game getGame() {
 		return game;
 	}
