@@ -20,5 +20,6 @@ public class JoinGame extends BaseServlet {
 		Game game = getGame(gameId);
 		
 		game.setOpponent(getPerson(person.getId()));
+		getPerson(person.getId()).setGame(game);
 	}
 }

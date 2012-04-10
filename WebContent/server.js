@@ -16,6 +16,29 @@ function Server() { //class that represents the server more or less
 
 function registerShot(shot) { 	// returns 1 if enemy ship was hit
 								// 3 is sunk, 2 if square is already shot and 0 if simply a miss
+
+	var msg = $.post("game", {"coords" : JSON.stringify(shot)});
+	var txt = "123";
+	
+	
+	
+	if (txt == "0") {
+		return 0;
+	}
+	else if (txt == "1") {
+		return 1;
+	}
+	else if (txt == "2") {
+		return 2;
+	}
+	else {
+		var ship = JSON.parse(txt);
+		var ship = new Ship(ship.coordinates);
+		drawDownedShip(ship);
+		return 3;
+	}
+	
+	/*
 	if (this.oppField[shot[0]][shot[1]] == 1) {
 		this.oppField[shot[0]][shot[1]] = 2;
 		var i, j;
@@ -64,7 +87,7 @@ function registerShot(shot) { 	// returns 1 if enemy ship was hit
 			}
 		}
 		return 0;
-	}
+	}*/
 }
 
 function getEnemyResponse() { // returns enemy shot
@@ -80,15 +103,40 @@ function confirmShips() { //returns true if ship placement is correct
 }
 
 function isGameOver() { //0,1,2
-	if (this.enemyShips.length == 0) {
+	var msg = $.get("gameOver");
+	setTimeout("", 200);
+	var txt = msg.responseText;
+	
+	if (txt == "1") {
 		return 1;
 	}
-	if (this.ownShips.length == 0) {
+	else if (txt == "2"){
 		return 2;
 	}
-	return 0;
+	else {
+		return 0;
+	}
+	
+//	if (this.enemyShips.length == 0) {
+//		return 1;
+//	}
+//	if (this.ownShips.length == 0) {
+//		return 2;
+//	}
+//	return 0;
 }
 
 function ready() {
-	return true;
+	var msg = $.get("ready");
+	setTimeout("", 200);
+	var txt = msg.responseText;
+	console.log("Ready funkt, txt on" + txt);
+	if (txt == "1") {
+		console.log("Ready on 1");
+		return true;
+	}
+	else {
+		console.log("Ready on 1");
+		return false;
+	}
 }

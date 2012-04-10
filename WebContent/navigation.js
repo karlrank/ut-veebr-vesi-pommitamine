@@ -7,6 +7,7 @@ function toggleHelp() {
 }
 
 function toggleRankings() {
+	$("#rankingsTable").load("rankings");
 	$("#help").hide();
 	$("#history").hide();
 	$("#rankings").toggle();

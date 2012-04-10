@@ -8,8 +8,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 
-@WebServlet("/getLobby")
-public class GetLobby extends BaseServlet {
+@WebServlet("/lobbyTemp")
+public class LobbyTemp extends BaseServlet {
 	private static final long serialVersionUID = 1L;
 	
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) 
@@ -17,27 +17,15 @@ public class GetLobby extends BaseServlet {
 		
 		HttpSession session = req.getSession();
 		Person person = (Person) session.getAttribute("person");
-		
-		if (person == null) {
-			return;
-		}
-		
-		try {
-			//getPerson(person.getId()).getLobbyQueue().take();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		
 		PrintWriter writer = resp.getWriter();
-		//writer.println("<table><tr><th>Game Name</th><th>Game Owner</th><th>Join</th></tr>");
-		writer.println("wtf is going on");
-		return;
-		/*
+		writer.println("<table><tr><th>Game Name</th><th>Game Owner</th><th>Join</th></tr>");		
+		
+		
 		for (int i = 0; i < games.size(); i++) {
 			if (games.get(i).getOpponent() == null) {
 			writer.println("<tr><td>" + games.get(i).getName() + "</td><td>" + games.get(i).getOwner().getName() + "</td><td><a href=\"javascript:joinGame(" + games.get(i).getId() + ")\">Join</a></td></tr>");
 			}
 		}
-		writer.println("</table>");*/
+		writer.println("</table>");
 	}
 }

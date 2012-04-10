@@ -4,8 +4,8 @@ import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 
-@WebServlet("/getPeople")
-public class GetPeople extends BaseServlet {
+@WebServlet("/usersTemp")
+public class UsersTemp extends BaseServlet {
 	private static final long serialVersionUID = 1L;
 
 	@Override
@@ -19,12 +19,6 @@ public class GetPeople extends BaseServlet {
 		
 		if (person == null) {
 			return;
-		}
-
-		try {
-			//getPerson(person.getId()).getUserQueue().take();
-		} catch (Exception e) {
-			e.printStackTrace();
 		}
 		
 		
