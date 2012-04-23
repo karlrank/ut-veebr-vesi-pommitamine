@@ -24,8 +24,10 @@ function pauseReplay() {
 }
 
 function playReplay() {
-	playing = 1;
-	reallyPlay();
+	if (playing != 1) {
+		playing = 1;
+		reallyPlay();
+	}
 }
 
 function reallyPlay() {
