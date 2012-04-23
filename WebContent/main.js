@@ -1,6 +1,7 @@
 var shipExplosion = new Audio("http://cero.planet.ee/shipexplosion.wav");
 var bombShip = new Audio("http://cero.planet.ee/bombhitship.wav");
 var bombWater = new Audio("http://cero.planet.ee/bombtowater.wav");
+var rp;
 
 function getShot() {
 	$.get("oppHit", function (msg) {
@@ -8,6 +9,7 @@ function getShot() {
 		$(
 				"#playField tbody tr:eq(" + (ar[0] + 1) + ") td:eq("
 						+ (ar[1] + 1) + ")").addClass("explosion_s");
+		rp.addMove(new Array(1, 1, ar));
 		getShot();
 	});
 }
@@ -15,6 +17,8 @@ function getShot() {
 function clickConfirm() { //main game logic that takes place after the ship have been placed
 	if (finalizeShips(generateShips(server.ownField))) {
 		$.post("postField", {"field":JSON.stringify(server.ownField)});
+		rp = new Replay();
+		rp.ships = server.ownShips;
 		getShot();
 		
 		writeToChat("Game is on!");
@@ -33,6 +37,7 @@ function clickConfirm() { //main game logic that takes place after the ship have
 												"#oppField tbody tr:eq(" + (shot[0] + 1) + ") td:eq("
 														+ (shot[1] + 1) + ")").addClass("ripple");
 										writeToChat("Shot didn't hit");
+										rp.addMove(new Array(2, 2, shot));
 										bombWater.play();
 										
 									}
@@ -41,6 +46,7 @@ function clickConfirm() { //main game logic that takes place after the ship have
 												"#oppField tbody tr:eq(" + (shot[0] + 1) + ") td:eq("
 														+ (shot[1] + 1) + ")").addClass("explosion");
 										writeToChat("Shot hit, new turn");
+										rp.addMove(new Array(2, 1, shot));
 										bombShip.play();
 									}
 									else if (msg == "2") {										
@@ -51,6 +57,7 @@ function clickConfirm() { //main game logic that takes place after the ship have
 										var ship = new Ship(ship);
 										drawDownedShip(ship);
 										writeToChat("Ship sunk, new shot!");
+										rp.addMove(new Array(2, 3, shot));
 										shipExplosion.play();
 									}
 								});
@@ -66,11 +73,13 @@ function clickConfirm() { //main game logic that takes place after the ship have
 					 $.get("gameOver", function(msg) {
 						 	if (msg == "1") {
 						 		alert("You Won!");
+						 		addReplay(rp);
 						 		$.post("addResults", {"winlose":1});
 								$("#oppField td").unbind();
 							}
 							else if (msg == "2"){
 								writeToChat("You lost!");
+								addReplay(rp);
 								$.post("addResults", {"winlose":2});
 								$("#oppField td").unbind();
 							}
@@ -108,7 +117,20 @@ function joinGame(id) {
 
 $(document).ready(
 				function() {
-					
+					$("#back").click( function () {
+						console.log("Back Clicked!");
+					});
+					$("#pause").click( function () {
+						pauseReplay();
+						console.log("Pause Clicked!");
+					});
+					$("#play").click( function () {
+						playReplay();
+					});
+					$("#forward").click( function () {
+						console.log("Forward Clicked!");
+					});
+
 					
 					var name = prompt("Insert username", "");
 					if (name != null) {

@@ -21,6 +21,6 @@ public class GameFinished extends BaseServlet {
 				games.remove(i);
 			}
 		}
-		
+		 
 	}
 }
