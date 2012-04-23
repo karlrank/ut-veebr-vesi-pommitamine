@@ -1,3 +1,7 @@
+var shipExplosion = new Audio("http://cero.planet.ee/shipexplosion.wav");
+var bombShip = new Audio("http://cero.planet.ee/bombhitship.wav");
+var bombWater = new Audio("http://cero.planet.ee/bombtowater.wav");
+
 function getShot() {
 	$.get("oppHit", function (msg) {
 		var ar = JSON.parse(msg);
@@ -29,6 +33,7 @@ function clickConfirm() { //main game logic that takes place after the ship have
 												"#oppField tbody tr:eq(" + (shot[0] + 1) + ") td:eq("
 														+ (shot[1] + 1) + ")").addClass("ripple");
 										writeToChat("Shot didn't hit");
+										bombWater.play();
 										
 									}
 									else if (msg == "1") {
@@ -36,6 +41,7 @@ function clickConfirm() { //main game logic that takes place after the ship have
 												"#oppField tbody tr:eq(" + (shot[0] + 1) + ") td:eq("
 														+ (shot[1] + 1) + ")").addClass("explosion");
 										writeToChat("Shot hit, new turn");
+										bombShip.play();
 									}
 									else if (msg == "2") {										
 										writeToChat("Square already shot, try again.");
@@ -45,6 +51,7 @@ function clickConfirm() { //main game logic that takes place after the ship have
 										var ship = new Ship(ship);
 										drawDownedShip(ship);
 										writeToChat("Ship sunk, new shot!");
+										shipExplosion.play();
 									}
 								});
 							}
@@ -59,10 +66,12 @@ function clickConfirm() { //main game logic that takes place after the ship have
 					 $.get("gameOver", function(msg) {
 						 	if (msg == "1") {
 						 		alert("You Won!");
+						 		$.post("addResults", {"winlose":1});
 								$("#oppField td").unbind();
 							}
 							else if (msg == "2"){
 								writeToChat("You lost!");
+								$.post("addResults", {"winlose":2});
 								$("#oppField td").unbind();
 							}
 					 });
@@ -84,22 +93,11 @@ function clickNewGame() {
 
 function getNewUsers() {
 	setTimeout("$(\"#users\").load(\"usersTemp\");getNewUsers();", 1000);
-	/*
-	console.log("gnu kutsutud");
-	$.get("usersTemp", function (msg) {
-		$("#users").html(msg);
-		
-	});*/
 }
 
 function getNewLobby() {
 	setTimeout("$(\"#games\").load(\"lobbyTemp\");getNewLobby();", 1000);
 }
-	/*
-	$.get("lobbyTemp", function (msg) {
-		$("#games").html(msg);
-		setTimeout("getNewLobby()", 1000);
-	});*/
 
 
 function joinGame(id) {
@@ -110,6 +108,8 @@ function joinGame(id) {
 
 $(document).ready(
 				function() {
+					
+					
 					var name = prompt("Insert username", "");
 					if (name != null) {
 						$.post("addPerson", {name:name});

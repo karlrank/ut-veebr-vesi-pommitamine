@@ -30,6 +30,7 @@ function showPlayField() {
 	$("#oppField").show();
 	$("#chatBox").show();
 	$("#confirmButton").show();
+	$("#replayControl").show();
 }
 
 function clean() {

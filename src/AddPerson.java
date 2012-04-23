@@ -41,7 +41,7 @@ public class AddPerson extends BaseServlet {
 		Person person = new Person(name);
 		System.out.println("addPerson doPost: " + person);
 		people.add(person);
-		session.setAttribute("person", person);		
+		session.setAttribute("person", person);
 		
 		userPush.update();
 		connectDB();
@@ -52,7 +52,7 @@ public class AddPerson extends BaseServlet {
 			rs = ps.executeQuery();
 
 			if(!rs.next() && !rs.next()) {
-				ps = connection.prepareStatement("INSERT INTO test.user (Name, Games_Played, Won, Lost, Raiting) VALUES(\""+person.getName()+"\", 0, 0, 0, 1000);");
+				ps = connection.prepareStatement("INSERT INTO test.user (Name, Games_Played, Won, Lost, Rating) VALUES(\""+person.getName()+"\", 0, 0, 0, 1000);");
 				ps.execute();
 			}
 		} catch (SQLException e) {
