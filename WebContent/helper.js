@@ -117,7 +117,7 @@ function drawDownedShip(ship) {
 						.addClass("ripple");
 			}
 		}
-		if (coords[0][1] - 1 >= 1) {
+		if (coords[0][1] - 1 >= 0) {
 			$(
 					"#oppField tbody tr:eq(" + (coords[0][0]) + ") td:eq("
 							+ (coords[0][1] + 1) + ")").addClass("ripple");
@@ -129,6 +129,60 @@ function drawDownedShip(ship) {
 		}
 	}
 
+	if (ship.orientation == 1) {
+		for (i = 0; i < ship.length; i++) {
+			if (coords[0][0] > 0) {
+				$(
+						"#oppField tbody tr:eq(" + (coords[i][0]) + ") td:eq("
+								+ (coords[i][1] + 1) + ")").addClass("ripple");
+			}
+			if (coords[0][0] + 1 < 10) {
+				$(
+						"#oppField tbody tr:eq(" + (coords[i][0] + 2)
+								+ ") td:eq(" + (coords[i][1] + 1) + ")")
+						.addClass("ripple");
+			}
+		}
+		if ((coords[0][1] - 1) > 0) {
+			if ((coords[0][0] - 1) > 0) {
+				$(
+						"#oppField tbody tr:eq(" + (coords[0][0]) + ") td:eq("
+								+ (coords[0][1]) + ")").addClass("ripple");
+			}
+			$(
+					"#oppField tbody tr:eq(" + (coords[0][0] + 1) + ") td:eq("
+							+ (coords[0][1]) + ")").addClass("ripple");
+			if ((coords[0][0] + 1) < 10) {
+				$(
+						"#oppField tbody tr:eq(" + (coords[0][0] + 2)
+								+ ") td:eq(" + (coords[0][1]) + ")").addClass(
+						"ripple");
+			}
+		}
+		if ((coords[coords.length - 1][1] + 1) < 10) {
+			if ((coords[coords.length - 1][0] - 1) > 0) {
+				$(
+						"#oppField tbody tr:eq("
+								+ (coords[coords.length - 1][0]) + ") td:eq("
+								+ (coords[coords.length - 1][1] + 2) + ")")
+						.addClass("ripple");
+			}
+			$(
+					"#oppField tbody tr:eq("
+							+ (coords[coords.length - 1][0] + 1) + ") td:eq("
+							+ (coords[coords.length - 1][1] + 2) + ")")
+					.addClass("ripple");
+			if ((coords[coords.length - 1][0] + 1) < 10) {
+				$(
+						"#oppField tbody tr:eq("
+								+ (coords[coords.length - 1][0] + 2)
+								+ ") td:eq("
+								+ (coords[coords.length - 1][1] + 2) + ")")
+						.addClass("ripple");
+			}
+		}
+
+	}
 	for (var t = 0; t < ship.length; t++) {
 		var muut = ship.getCoordinates()[0][0];
 		$(
@@ -137,6 +191,7 @@ function drawDownedShip(ship) {
 				.addClass("explosion");
 		if (ship.orientation == 2) {
 			for (var k = 0; k < ship.length + 2; k++) {
+				console.log(t);
 				if (t + 1 == ship.length) {
 					if (ship.getCoordinates()[t][0] != 11) {
 						$(
@@ -172,56 +227,10 @@ function drawDownedShip(ship) {
 											+ ")").addClass("ripple");
 						}
 					}
-			
 					muut++;
 				}
 			}
-		
 		}
-		if (ship.orientation == 1) {
-			for (var k = 0; k < ship.length + 2; k++) {
-				if (t + 1 == ship.length) {
-					if (ship.getCoordinates()[0][t] != 11) {
-						$(
-								"#oppField tbody tr:eq("
-										+ (ship.getCoordinates()[0][t] + 2)
-										+ ") td:eq("
-										+ (ship.getCoordinates()[1][0] + 1)
-										+ ")").addClass("ripple");
-					}
-					if (ship.getCoordinates()[0][0] != 0) {
-						$(
-								"#oppField tbody tr:eq("
-										+ (ship.getCoordinates()[0][0])
-										+ ") td:eq("
-										+ (ship.getCoordinates()[1][0] + 1)
-										+ ")").addClass("ripple");
-					}
-					if (ship.getCoordinates()[1][0] + 2 < 11) {
-						if (muut != 0 && muut != 11) {
-							$(
-									"#oppField tbody tr:eq(" + (muut)
-											+ ") td:eq("
-											+ (ship.getCoordinates()[1][0] + 2)
-											+ ")").addClass("ripple");
-						}
-					}
-					if (ship.getCoordinates()[1][0] > 0) {
-						if (muut != 0 && muut != 11) {
-							$(
-									"#oppField tbody tr:eq(" + (muut)
-											+ ") td:eq("
-											+ (ship.getCoordinates()[1][0])
-											+ ")").addClass("ripple");
-						}
-					}
-					
-					muut++;
-				}
-			}
-		
-		}
-
 	}
 
 }
@@ -344,4 +353,28 @@ for (i=0;i<ARRcookies.length;i++)
     return unescape(y);
     }
   }
+}
+
+function addOppExplosion(x, y) {
+	$("#oppField tbody tr:eq(" + (x + 1) + ") td:eq("+ (y + 1) + ")").addClass("explosion");
+}
+
+function addOppRipple(x, y) {
+	$("#oppField tbody tr:eq(" + (x + 1)+ ") td:eq(" + (y + 1) + ")").addClass("ripple");
+}
+
+function addOwnExplosion(x, y) {
+	$("#playField tbody tr:eq(" + (x + 1) + ") td:eq("+ (y + 1) + ")").addClass("explosion");
+}
+
+function addOwnRipple(x, y) {
+	$("#playField tbody tr:eq(" + (x + 1)+ ") td:eq(" + (y + 1) + ")").addClass("ripple");
+}
+
+function removeOwnAll(x, y) {
+	$("#playField tbody tr:eq(" + (x + 1) + ") td:eq(" + (y + 1) + ")").removeClass();
+}
+
+function removeOppAll(x, y) {
+	$("#oppField tbody tr:eq(" + (x + 1) + ") td:eq(" + (y + 1) + ")").removeClass();
 }
