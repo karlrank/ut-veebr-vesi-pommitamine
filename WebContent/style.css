@@ -14,6 +14,19 @@ table {
 	width: 100%;
 }
 
+#replayControl {
+	padding: 0px;
+	margin: 0px;
+	display: none;
+	position: absolute;
+	height: 50px;
+	width: 290px;
+	top: 185px;
+	left: 250px;
+	background-color: #8CBCDE;
+	border: 1px solid black;
+}
+
 #playField {
 	display: none;
 	position: absolute;

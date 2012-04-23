@@ -30,7 +30,7 @@ public class Rankings extends BaseServlet {
 		ResultSet rs;
 		try
 		{	
-			String sql = "SELECT * FROM test.user ORDER BY Raiting";
+			String sql = "SELECT * FROM test.user ORDER BY Rating";
 			ps = connection.prepareStatement(sql);
 			rs = ps.executeQuery();
 			writer.println("<table><tr><th>Name</th><th>Played Games</th><th>Win %</th><th>Rating</th></tr>");
@@ -38,7 +38,7 @@ public class Rankings extends BaseServlet {
 			{
 				writer.println("<tr><td>"+rs.getString(2)+"</td>");
 				writer.println("<td>"+rs.getInt(3)+"</td>");
-				writer.println("<td>"+(rs.getFloat(4) / rs.getFloat(5))+"</td>");
+				writer.println("<td>"+(rs.getFloat(4) / rs.getFloat(3) * 100)+"</td>");
 				writer.println("<td>"+rs.getString(6)+"</td></tr>");
 			}
 			writer.println("</table>");
