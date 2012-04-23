@@ -117,72 +117,18 @@ function drawDownedShip(ship) {
 						.addClass("ripple");
 			}
 		}
-		if (coords[0][1] - 1 >= 0) {
+		if (coords[0][1] - 1 >= 1) {
 			$(
 					"#oppField tbody tr:eq(" + (coords[0][0]) + ") td:eq("
 							+ (coords[0][1] + 1) + ")").addClass("ripple");
 		}
-		if (coords[0][1] + 1 < 10) {
+		if (coords[0][1] + 1 < 11) {
 			$(
 					"#oppField tbody tr:eq(" + (coords[0][0] + 2) + ") td:eq("
 							+ (coords[0][1] + 1) + ")").addClass("ripple");
 		}
 	}
 
-	if (ship.orientation == 1) {
-		for (i = 0; i < ship.length; i++) {
-			if (coords[0][0] - 1 > 0) {
-				$(
-						"#oppField tbody tr:eq(" + (coords[i][0]) + ") td:eq("
-								+ (coords[i][1] + 1) + ")").addClass("ripple");
-			}
-			if (coords[0][0] + 1 < 10) {
-				$(
-						"#oppField tbody tr:eq(" + (coords[i][0] + 2)
-								+ ") td:eq(" + (coords[i][1] + 1) + ")")
-						.addClass("ripple");
-			}
-		}
-		if ((coords[0][1] - 1) > 0) {
-			if ((coords[0][0] - 1) > 0) {
-				$(
-						"#oppField tbody tr:eq(" + (coords[0][0]) + ") td:eq("
-								+ (coords[0][1]) + ")").addClass("ripple");
-			}
-			$(
-					"#oppField tbody tr:eq(" + (coords[0][0] + 1) + ") td:eq("
-							+ (coords[0][1]) + ")").addClass("ripple");
-			if ((coords[0][0] + 1) < 10) {
-				$(
-						"#oppField tbody tr:eq(" + (coords[0][0] + 2)
-								+ ") td:eq(" + (coords[0][1]) + ")").addClass(
-						"ripple");
-			}
-		}
-		if ((coords[coords.length - 1][1] + 1) < 10) {
-			if ((coords[coords.length - 1][0] - 1) > 0) {
-				$(
-						"#oppField tbody tr:eq("
-								+ (coords[coords.length - 1][0]) + ") td:eq("
-								+ (coords[coords.length - 1][1] + 2) + ")")
-						.addClass("ripple");
-			}
-			$(
-					"#oppField tbody tr:eq("
-							+ (coords[coords.length - 1][0] + 1) + ") td:eq("
-							+ (coords[coords.length - 1][1] + 2) + ")")
-					.addClass("ripple");
-			if ((coords[coords.length - 1][0] + 1) < 10) {
-				$(
-						"#oppField tbody tr:eq("
-								+ (coords[coords.length - 1][0] + 2)
-								+ ") td:eq("
-								+ (coords[coords.length - 1][1] + 2) + ")")
-						.addClass("ripple");
-			}
-		}
-
-	}
 	for (var t = 0; t < ship.length; t++) {
 		var muut = ship.getCoordinates()[0][0];
 		$(
@@ -191,7 +137,6 @@ function drawDownedShip(ship) {
 				.addClass("explosion");
 		if (ship.orientation == 2) {
 			for (var k = 0; k < ship.length + 2; k++) {
-				console.log(t);
 				if (t + 1 == ship.length) {
 					if (ship.getCoordinates()[t][0] != 11) {
 						$(
@@ -227,27 +172,74 @@ function drawDownedShip(ship) {
 											+ ")").addClass("ripple");
 						}
 					}
+			
 					muut++;
 				}
 			}
+		
 		}
+		if (ship.orientation == 1) {
+			for (var k = 0; k < ship.length + 2; k++) {
+				if (t + 1 == ship.length) {
+					if (ship.getCoordinates()[0][t] != 11) {
+						$(
+								"#oppField tbody tr:eq("
+										+ (ship.getCoordinates()[0][t] + 2)
+										+ ") td:eq("
+										+ (ship.getCoordinates()[1][0] + 1)
+										+ ")").addClass("ripple");
+					}
+					if (ship.getCoordinates()[0][0] != 0) {
+						$(
+								"#oppField tbody tr:eq("
+										+ (ship.getCoordinates()[0][0])
+										+ ") td:eq("
+										+ (ship.getCoordinates()[1][0] + 1)
+										+ ")").addClass("ripple");
+					}
+					if (ship.getCoordinates()[1][0] + 2 < 11) {
+						if (muut != 0 && muut != 11) {
+							$(
+									"#oppField tbody tr:eq(" + (muut)
+											+ ") td:eq("
+											+ (ship.getCoordinates()[1][0] + 2)
+											+ ")").addClass("ripple");
+						}
+					}
+					if (ship.getCoordinates()[1][0] > 0) {
+						if (muut != 0 && muut != 11) {
+							$(
+									"#oppField tbody tr:eq(" + (muut)
+											+ ") td:eq("
+											+ (ship.getCoordinates()[1][0])
+											+ ")").addClass("ripple");
+						}
+					}
+					
+					muut++;
+				}
+			}
+		
+		}
+
 	}
 
 }
 
 function validateShips(field) {
 	var i, j, k;
-	for (i = 0; i <= 8; i++) {
-		for (j = 0; j <= 8; j++) {
+	for (i = 0; i <= 9; i++) {
+		for (j = 0; j <= 9; j++) {
 			var num = 0;
 			var oth = 0;
-			if (field[i][j] == 1
+			if (i<9 && field[i][j] == 1
 					&& (field[i + 1][j] == 1 && field[i][j + 1] == 1
-							|| field[i + 1][j + 1] == 1 || (j > 0 && i > 0 && field[i - 1][j + 1] == 1))) {
+					|| field[i + 1][j + 1] == 1 || field[i + 1][j - 1] == 1 ||
+					(j > 0 && i > 0 && field[i - 1][j + 1] == 1))) {
 				return false;
 				break;
 			}
-			for (k = 0; k < 10 - i; k++) {
+			for (k = 0; k <= 9 - i; k++) {
 				if (field[i + k][j] == 1) {
 					num++;
 					if (num > 4) {
@@ -257,7 +249,7 @@ function validateShips(field) {
 					break;
 				}
 			}
-			for (k = 0; k < 10 - j; k++) {
+			for (k = 0; k <= 9 - j; k++) {
 				if (field[i][j + k] == 1) {
 					oth++;
 					if (oth > 4) {
