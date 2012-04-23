@@ -1,0 +1,43 @@
+.shipMidEW  {
+	background-image: url('img/ships/MidEW.png');
+}
+
+.shipMidNS {
+	background-image: url('img/ships/MidNS.png');
+}
+
+.shipNoseEW {
+	background-image: url('img/ships/NoseEW.png');
+}
+
+.shipNoseNS {
+	background-image: url('img/ships/NoseNS.png');
+}
+
+.shipOneShip {
+	background-image: url('img/ships/OneShip.png');
+}
+
+.shipTailEW {
+	background-image: url('img/ships/TailEW.png');
+}
+
+.shipTailNS {
+	background-image: url('img/ships/TailNS.png');
+}
+
+.explosion {
+	background-image: url('img/explosion_big.png');
+}
+
+.ripple {
+	background-image: url('img/Ripple30px.png');
+}
+
+.ripple_s {
+	background-image: url('img/Ripple20px.png');
+}
+
+.explosion_s {
+	background-image: url('img/explosion_s.png');
+}
