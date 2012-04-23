@@ -10,6 +10,8 @@
 <script type="text/javascript" src="server.js"></script>
 <script type="text/javascript" src="ship.js"></script>
 <script type="text/javascript" src="helper.js"></script>
+<script type="text/javascript" src="replay.js"></script>
+<script type="text/javascript" src="replayClass.js"></script>
 <script type="text/javascript" src="main.js"></script>
 </head>
 
@@ -332,10 +334,10 @@
 				</table>
 			</div>
 			<div id="replayControl">
-				<img alt="back" src="img/buttons/backButton.png" />
-				<img alt="pause" src="img/buttons/pauseButton.png" />
-				<img alt="play" src="img/buttons/playButton.png" />
-				<img alt="forward" src="img/buttons/fowButton.png" />
+				<img id="back" alt="back" src="img/buttons/backButton.png" />
+				<img id="pause"alt="pause" src="img/buttons/pauseButton.png" />
+				<img id="play" alt="play" src="img/buttons/playButton.png" />
+				<img id="forward" alt="forward" src="img/buttons/fowButton.png" />
 			</div>
 			<div id="confirmButton">
 				<a href="javascript:clickConfirm()">
@@ -431,98 +433,6 @@
 							<th>Win %</th>
 							<th>Rating</th>
 						</tr>
-						<tr>
-							<td>Mina Siin</td>
-							<td>50</td>
-							<td>48%</td>
-							<td>500</td>
-						</tr>
-						<tr>
-							<td>Mina Siin</td>
-							<td>50</td>
-							<td>48%</td>
-							<td>500</td>
-						</tr>
-						<tr>
-							<td>Mina Siin</td>
-							<td>50</td>
-							<td>48%</td>
-							<td>500</td>
-						</tr>
-						<tr>
-							<td>Mina Siin</td>
-							<td>50</td>
-							<td>48%</td>
-							<td>500</td>
-						</tr>
-						<tr>
-							<td>Mina Siin</td>
-							<td>50</td>
-							<td>48%</td>
-							<td>500</td>
-						</tr>
-						<tr>
-							<td>Mina Siin</td>
-							<td>50</td>
-							<td>48%</td>
-							<td>500</td>
-						</tr>
-						<tr>
-							<td>Mina Siin</td>
-							<td>50</td>
-							<td>48%</td>
-							<td>500</td>
-						</tr>
-						<tr>
-							<td>Mina Siin</td>
-							<td>50</td>
-							<td>48%</td>
-							<td>500</td>
-						</tr>
-						<tr>
-							<td>Mina Siin</td>
-							<td>50</td>
-							<td>48%</td>
-							<td>500</td>
-						</tr>
-
-						<tr>
-							<td>Mina Siin</td>
-							<td>50</td>
-							<td>48%</td>
-							<td>500</td>
-						</tr>
-						<tr>
-							<td>Mina Siin</td>
-							<td>50</td>
-							<td>48%</td>
-							<td>500</td>
-						</tr>
-						<tr>
-							<td>Mina Siin</td>
-							<td>50</td>
-							<td>48%</td>
-							<td>500</td>
-						</tr>
-						<tr>
-							<td>Mina Siin</td>
-							<td>50</td>
-							<td>48%</td>
-							<td>500</td>
-						</tr>
-						<tr>
-							<td>Mina Siin</td>
-							<td>50</td>
-							<td>48%</td>
-							<td>500</td>
-						</tr>
-						<tr>
-							<td>Mina Siin</td>
-							<td>50</td>
-							<td>48%</td>
-							<td>500</td>
-						</tr>
-
 					</table>
 				</div>
 				<div class="closeButtonContainer">
@@ -534,90 +444,15 @@
 			<div id="history">
 				<div class="popupText">
 					<table>
+						<thead>
 						<tr>
 							<th>Id</th>
-							<th>Opponent</th>
 							<th>Time</th>
 							<th>Replay</th>
 						</tr>
-						<tr>
-							<td>1</td>
-							<td>Mina Seal</td>
-							<td>25.02.12-12.05</td>
-							<td>Replay</td>
-						</tr>
-						<tr>
-							<td>2</td>
-							<td>Mina Seal</td>
-							<td>25.02.12-12.05</td>
-							<td>Replay</td>
-						</tr>
-						<tr>
-							<td>3</td>
-							<td>Mina Seal</td>
-							<td>25.02.12-12.05</td>
-							<td>Replay</td>
-						</tr>
-						<tr>
-							<td>4</td>
-							<td>Mina Seal</td>
-							<td>25.02.12-12.05</td>
-							<td>Replay</td>
-						</tr>
-						<tr>
-							<td>5</td>
-							<td>Mina Seal</td>
-							<td>25.02.12-12.05</td>
-							<td>Replay</td>
-						</tr>
-						<tr>
-							<td>6</td>
-							<td>Mina Seal</td>
-							<td>25.02.12-12.05</td>
-							<td>Replay</td>
-						</tr>
-						<tr>
-							<td>7</td>
-							<td>Mina Seal</td>
-							<td>25.02.12-12.05</td>
-							<td>Replay</td>
-						</tr>
-						<tr>
-							<td>8</td>
-							<td>Mina Seal</td>
-							<td>25.02.12-12.05</td>
-							<td>Replay</td>
-						</tr>
-						<tr>
-							<td>9</td>
-							<td>Mina Seal</td>
-							<td>25.02.12-12.05</td>
-							<td>Replay</td>
-						</tr>
-						<tr>
-							<td>10</td>
-							<td>Mina Seal</td>
-							<td>25.02.12-12.05</td>
-							<td>Replay</td>
-						</tr>
-						<tr>
-							<td>11</td>
-							<td>Mina Seal</td>
-							<td>25.02.12-12.05</td>
-							<td>Replay</td>
-						</tr>
-						<tr>
-							<td>12</td>
-							<td>Mina Seal</td>
-							<td>25.02.12-12.05</td>
-							<td>Replay</td>
-						</tr>
-						<tr>
-							<td>13</td>
-							<td>Mina Seal</td>
-							<td>25.02.12-12.05</td>
-							<td>Replay</td>
-						</tr>
+						</thead>
+						<tbody id="historyTable">
+						</tbody>
 					</table>
 				</div>
 				<div class="closeButtonContainer">

@@ -16,7 +16,6 @@ public class OpponentHit extends BaseServlet {
 	
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) 
 			throws ServletException, IOException {
-		System.out.println("Alustasime opphitti");
 		HttpSession session = req.getSession();
 		Person person = (Person) session.getAttribute("person");
 		person = getPerson(person.getId());
@@ -28,7 +27,5 @@ public class OpponentHit extends BaseServlet {
 		} catch (InterruptedException e) {
 			throw new RuntimeException(e);
 		}
-		
-		System.out.println("Äkki isegi lõpetame - Alustasime opphitti");
 	}
 }

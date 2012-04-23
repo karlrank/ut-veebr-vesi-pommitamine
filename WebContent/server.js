@@ -130,13 +130,10 @@ function ready() {
 	var msg = $.get("ready");
 	setTimeout("", 200);
 	var txt = msg.responseText;
-	console.log("Ready funkt, txt on" + txt);
 	if (txt == "1") {
-		console.log("Ready on 1");
 		return true;
 	}
 	else {
-		console.log("Ready on 1");
 		return false;
 	}
 }

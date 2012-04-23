@@ -14,6 +14,7 @@ function toggleRankings() {
 }
 
 function toggleHistory() {
+	displayReplays();
 	$("#help").hide();
 	$("#rankings").hide();
 	$("#history").toggle();
@@ -30,7 +31,6 @@ function showPlayField() {
 	$("#oppField").show();
 	$("#chatBox").show();
 	$("#confirmButton").show();
-	$("#replayControl").show();
 }
 
 function clean() {
@@ -42,5 +42,6 @@ function clean() {
 	$("#chatBox").hide();
 	$("#confirmButton").hide();
 	$("#chatBox").hide();
+	$("#replayControl").hide();
 	$("#lobby").show();
 }
