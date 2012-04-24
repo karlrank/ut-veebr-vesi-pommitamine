@@ -15,22 +15,6 @@ public class People extends BaseServlet {
 		
 	}
 
-	@Override
-	public void init(ServletConfig config) throws ServletException {
-		if (userPush == null) {
-			userPush = new UserPushService(people);
-			Thread userPushThread = new Thread(userPush);
-			userPushThread.setDaemon(true);
-			userPushThread.start();
-		}
-		if (lobbyPush == null) {
-			lobbyPush = new LobbyPushService(games);
-			Thread lobbyPushThread = new Thread(lobbyPush);
-			lobbyPushThread.setDaemon(true);
-			lobbyPushThread.start();
-		}
-	}
-
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 		    throws ServletException, IOException {
 				System.out.println("People doGet");

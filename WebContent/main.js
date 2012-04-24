@@ -57,7 +57,7 @@ function clickConfirm() { //main game logic that takes place after the ship have
 										var ship = new Ship(ship);
 										drawDownedShip(ship);
 										writeToChat("Ship sunk, new shot!");
-										rp.addMove(new Array(2, 3, shot));
+										rp.addMove(new Array(2, 3, shot, ship));
 										shipExplosion.play();
 									}
 								});
@@ -118,17 +118,16 @@ function joinGame(id) {
 $(document).ready(
 				function() {
 					$("#back").click( function () {
-						console.log("Back Clicked!");
+						moveBack();
 					});
 					$("#pause").click( function () {
 						pauseReplay();
-						console.log("Pause Clicked!");
 					});
 					$("#play").click( function () {
 						playReplay();
 					});
 					$("#forward").click( function () {
-						console.log("Forward Clicked!");
+						nextMove();
 					});
 
 					
@@ -164,13 +163,14 @@ function exitGame() {
 	if(leave) {
 		clean();
 	}
+	cleanFields();
 	$.post("gameFinished");
 }
 
 
-window.onbeforeunload = function () {
-	//$.post("die");
-	//alert("tere");
+window.onbeforeunload = function() {
+	$.post("die");
+	return "Just leave!";
 };
 
 
