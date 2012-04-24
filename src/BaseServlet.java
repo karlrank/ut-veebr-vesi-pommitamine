@@ -38,6 +38,15 @@ public class BaseServlet extends HttpServlet {
     	return people.get(0);
     }
     
+    static void removePerson(int id) {
+    	for (int i = 0; i < people.size(); i++) {
+    		if(people.get(i).getId() == id) {
+    			people.remove(i);
+    			break;
+    		}
+    	}
+    }
+    
     static Game getGame(int id) {
     	for (int i = 0; i < games.size(); i++) {
     		if(games.get(i).getId() == id) {
@@ -45,6 +54,15 @@ public class BaseServlet extends HttpServlet {
     		}
     	}
     	return games.get(0);
+    }
+    
+    static void removeGameByPerson(int id) {
+    	for (int i = 0; i < games.size(); i++) {
+    		if(games.get(i).getOwner().getId() == id || games.get(i).getOpponent().getId() == id) {
+    			games.remove(i);
+    			break;
+    		}
+    	}
     }
     
 	static void connectDB() {
