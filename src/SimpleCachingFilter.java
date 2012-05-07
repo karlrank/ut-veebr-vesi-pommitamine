@@ -26,6 +26,7 @@ public class SimpleCachingFilter implements Filter {
         Calendar inTwoMonths = new GregorianCalendar();
         inTwoMonths.add(Calendar.MONTH, 2);
         resp.setDateHeader("Expires", inTwoMonths.getTimeInMillis());
+        resp.setCharacterEncoding("utf-8");
         
         // rakenda järgmine filter või, kui rohkem filtreid pole
         // siis rakenda tavatoiming (Servlet, JSP või staatilise fail lugemine) 
