@@ -131,11 +131,11 @@ $(document).ready(
 					});
 
 					
-					var name = prompt("Insert username", "");
-					if (name != null) {
-						$.post("addPerson", {name:name});
-						
-					}
+//					var name = prompt("Insert username", "");
+//					if (name != null) {
+//						$.post("addPerson", {name:name});
+//						
+//					}
 					getNewUsers();
 					getNewLobby();
 					

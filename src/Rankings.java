@@ -30,7 +30,7 @@ public class Rankings extends BaseServlet {
 		ResultSet rs;
 		try
 		{	
-			String sql = "SELECT * FROM test.user ORDER BY Rating";
+			String sql = "SELECT * FROM test.user ORDER BY Rating DESC";
 			ps = connection.prepareStatement(sql);
 			rs = ps.executeQuery();
 			writer.println("<table><tr><th>Name</th><th>Played Games</th><th>Win %</th><th>Rating</th></tr>");
